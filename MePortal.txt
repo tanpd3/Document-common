@@ -1,0 +1,1928 @@
+
+Dong goi package to Release hang tuan.
+link folder deliverable:
+D:\MePortal\01.Documents\08.Deliverable\05.MePortal
+
+// link source code:
+D:\MePortal\03.SourceCode\05.MePortal\02.Source_Dev
+
+// change file:
+Su dung Araxis Merge de merge source giua ban 02.Source_Dev va ban deliverable cũ.
+va chi lay nhưng file thay doi.
+
+
+MYSQL:
+- Restart Mysql trên Server -> WinSCP -> Putty.
+localhost: putty
+user:root/fsoft@12345
+port: 22
+1.Restart httpd
+service httpd restart
+2. Restart tomcat
+service tomcat restart
+3. Restart mysql
+service mysqld restart
+
+4. Dump database
+mysqldump -u root -p inquiry_system --routines --triggers > inquiry_system_20150913.sql
+
+- Restart Mysql trên Local: 
++ services.msc
++ Search MySQL service (Sometimes found as MySQL56 or MySQL57) based on version installed.
+-> Click stop, start or restart the service option -> OK.
+
+D:\MePortal\02.Management\03.Data\05.MePortal\FPT\LamTV4\HANOVER UPDATE
+
+Server Die:
+-> WinSCP -> putty -> new tab(+) -> test connect(xem con nao die thi khoi dong lai):
++ -> root@10.17.39.95_Test_IG
++ -> root@10.17.39.124_Test_AM
+-> nhấn vào 1 con nào mà ko connect được thì nó chết ở con đó.
+( 
+-> 2 con root@.. này được con fig trong file C://...etc/host và nhiệm vụ của nó chỉ là AuthenticationInterceptor
+10.17.39.95 meportal.cad.css.fujitsu.com
+10.17.38.124 meportal-auth.cad.css.fujitsu.com 
+)
+-> Khoi dong lai:
++ 1 Case: chứa 2 con root@.. này(Open AM(Access management) && Open DJ(Derectory ..)) dùng để AuthenticationInterceptor.
+-> bật máy lên vào từng con một -> control panel 
+-> khỏi động... user/pass: đọc thêm ở link (Thông tin dự án MePortal.xlsx)
+[Neu OpenAM && OpenDJ Die thi ko login dc vao Putty]
+
++ 1 Case server: chứa tomcat && Mysql
+-> khởi động lại: đọc thêm ở link dưới.
+Note: nếu Die Server thì mới bật Case khỏi động server, còn nếu nếu bt die OpenAM || OpenDJ thì chỉ cần bật 1 Case chứa root@.. để restart lại.
+
+
+Link fill comment du an:
+D:\MePortal\01.Documents\01.REQ\05.MePortal\ISV\#19404\Customer_Comment
+
+// step by step export file .war
+1. commit source ben dev o workplace: D:\Dev_Mestudio\Eclipse-workspace-svn2\ISVToolLicenseManager
+2. new eclipse -> update souce code ben workplace release: D:\Dev_Mestudio\Eclipse-workspace-release\ISVToolLicenseManager
+-> export .war file.
+Do 2 ben cung get data tu SVN nen dong bo hoa code, khong phai mearge source code.
+
+Config DA:
+- Server: https://fhn-svn01.fsoft.com.vn/svn/FSU11.BU13.MESTUDIO2K16/MeStudio03/trunk/02.Management/03.Data/05.MePortal/FPT/LamTV4/HANOVER
+- SVN DA >>> https://fhn-svn01.fsoft.com.vn/svn/FSU11.BU13.MESTUDIO2K16/MeStudio03/trunk 
+- link: https://meportal.cad.css.fujitsu.com/ISVToolLicenseManager/
+-> C:\Windows\System32\drivers\etc\host
+10.17.38.108 meportal.fpt.com
+10.17.38.109 meportal.cad.css.fpt.com
+10.17.38.67 meportal-auth.cad.css.fpt.com 
+10.17.39.88 meportal.com
+10.17.39.95 meportal.cad.css.fujitsu.com
+10.17.38.124 meportal-auth.cad.css.fujitsu.com 
+
+Trong file hibernate.properties
+hibernate.c3p0.max_size=50 => max 50 truy vấn vào DB.
+
+Link && acount test: send mail:
+https://10.16.51.140/owa 
+	mail.Account=    meportal01@fdev.local
+	mail.Password=   fsu11@123456 
+
+
+Change proxy: 
+Add item:  *.fpt.com; meportal.com; meportal.cad.css.fujitsu.com; meportal-auth.cad.css.fujitsu.com
+
+CheckList: D:\MePortal\02.Management\04.Reference\04. Checklist
+
+Login
+takagi@jp.fujitsu.com/12345678
+ThaiHX1@fsoft.com.vn/12345678
+ANHNT7@fsoft.com.vn/12345678  
+TrongLD@fsoft.com.vn//12345678
+
+Go lai: https://meportal.cad.css.fujitsu.com/ISVToolLicenseManager/
+-> show: https://meportal.cad.css.fujitsu.com/ISVToolLicenseManager/ -> man hinh coding.
+https://fhn-svn01.fsoft.com.vn/svn/FSU11.BU13.MESTUDIO2K16/trunk/02.Management/04.Reference/01.Training
+ 
+- Test: local va server:
+ Server WinSCP la: 10.17.39.88_TEST_ME
+
+ 
+Note thuat ngu dung trong Da:
+https://fhn-svn01.fsoft.com.vn/svn/FSU11.BU13.MESTUDIO2K16/trunk/02.Management/04.Reference/01.Training/Tai li?u MeStudio/B?ng thu?t ng? dung trong ch??ng trinh MeStudio.xlsx
+
+- Tai lieu ISV: 
+main pic ISV :XuatDD
+Cach gui request dich mail:
+--- start mail ---
+Do Dac Xuat (F500.SU7)
+Ba 09/05/2017 11:23 SA
+Đến:
+Tamura Takashi (FGC.HN2);
+Le Thi Thanh (FGC.HN2);
+Bui Thanh Phong (FGC.HN2);
+Cc:
+F500.SU7.FATEC.MEPORTAL;
+F500.SU7.FATEC.CORE;
+Bui Van Luong (F500.SU7);
+
+Hi comtors team,
+ 
+Nhờ các bạn dịch hộ file sau :
+ 
+https://fhn-svn01.fsoft.com.vn/svn/FSU11.BU13.MESTUDIO2K16/MeStudio03/trunk/01.Documents/08.Deliverable/05.MePortal/20170509/MePortal_ISV_20170509/ISVツールライセンス_20170509.docx
+ 
+Thanks.
+
+ --- start doan bat buoc phai co ----
+新規機能 #20052: [ISVツールライセンス管理]新たにISVツールのライセンス管理を行うシステムを開発する
+作成者: FPT)Bui Van Luong
+ステータス: 開発
+優先度: A:高め
+担当者: FPT)Nguyen Quang Hoan
+カテゴリ: ② 認証／アカウント
+対象バージョン:
+管理対象: はい
+コマンド名:
+開発担当: FPT)Nguyen Quang Hoan
+受入担当(開発): 開発電気)高木 美紀
+受入担当(サポート):
+更新履歴入力者: 開発電気)高木 美紀
+管理用優先度:
+依頼元:
+依頼者:
+データの場所:
+エビデンス:
+サポート管理番号:
+更新履歴チケット番号:
+提供バージョン:
+ファイル MePortal_ISV_ソフトウェア要件仕様書_v1.0.docx (409 KB)
+MePortal_ISV_20170418.zip.gpg (43.5 MB)
+ISV_QA_Management_02170419.xlsx (1.89 MB)
+ISV_QA_Management_02170419_Ans.xlsx (1.9 MB)
+指摘事項.xlsx (82 KB)
+MePortal_ISV_20170425.zip.gpg (25.1 MB)
+ISV_QA_Management.xlsx (1.89 MB)
+ISV_QA_Management_Ans.xlsx (1.9 MB)
+ISV_QA_Management.xlsx (1.89 MB)
+ISV_QA_Management.xlsx (1.9 MB)
+指摘事項.xlsx (280 KB)
+ --- end doan bat buoc phai co ----
+--- end mail ---
+
+- SVN: 
+https://fhn-svn01.fsoft.com.vn/svn/FSU11.BU13.MESTUDIO2K16/MeStudio03/trunk/01.Documents/01.REQ/05.MePortal/ISV/#19404 
+
+- DB: MySql (file .sql)
+Cau hoi 1: muon insert 1 member vao project (project_id) : insert vao bang chính trước(project_info, member) sau do insert vao bang trung gian(project_belong_info) duoc lay thong tin tu 2 bang chinh.
+
+B1 : insert 1 member ( kyểm tra coi member đó đã tồn tại trong db hay chưa ) -> tồn tại rồi thì update cái link ví dụ ( nó tham gia project 1 rồi thì link =1 add nó vào project 2 thì update link =1,2)
+B2 : update cái trường member trong project_info ( project này có 3 member 1,2,3 thêm thằng 4 thi nó sẽ là 1,2,3,4)
+B3: insert bảng project_belong_info với status = 1 (da apporve ) và isManager= 0(member)
+
+Cau hoi 2:  muon update 1 member trong 1 project (quyền thôi)
+
+B1 : update quyen trong bang project_info 2 cột other_manager thêm member đó và xóa cái thằng member_id đó trong cái cột member
+B2: update cột isManager trong bang project_belong_info
+
+Cau hoi 3: muon delete 1 member trong 1 project 
+
+B1 : tim cái cột member xóa đi cái id trog chuỗi member ví dụ (member = 1,2,3 ) xóa member 3 update cái cột member = 1,2
+B2 : update lại trường link trong bang project_member_info xóa đi cái project_id tồn tại trong cái chuỗi link đấy
+B3: update lại trường status của bảng project_belong_info  thành 0 ( đã delete)
+
+- select DISTINCT bl.isManager from select DISTINCT bl.isManager from ProjectBelongInfo bl where ...
+=> DISTINCT chi select 1 ban gi neu trong DB co 2 truong du lieu trung nhau, va chi ap dung khi select 1 trương cu the nao do(bl.isManager).
+
+- truy van join 2 bang su dung 2 cach deu ra ket qua nhu nhau:
+SQL:
+SELECT * FROM isv_db.project_info WHERE status=1 AND seq_no IN (SELECT distinct project_id FROM isv_db.project_belong_info WHERE isManager=2)
+
+HQL:
+Query query = session.createQuery("select p.seqNo, p.projectName, p.managerEmail, p.loadOriginCode, p.costCode, p.productNumber from Project p where p.status=1"
+                    + " and p.seqNo in (select distinct pbi.project_id from ProjectBelongInfo pbi where pbi.isManager=2)");
+
+ 
+Cau hoi:
+Muon : xoa 1 project -> xoa o bang: ProjectBelongInfo > ProjectMemberInfor > bang Project xoa cuoi cung.
+Hoac : xoa 1 project -> xoa o bang: ProjectBelongInfo > Project > bang ProjectMemberInfor xoa cuoi cung.
+
+I) Table Project_info:
+1)Status: la Status cua Project
+0:Chưa approve/未承認
+1:Đã approve/承認済
+2:Reject/却下
+3:Delete/削除
+
+2) Member: thể hiện những member nào có ở trong project này.
+
+II) Table Member:
+Link : Link đây là các project mà member đó tham gia
+
+III) Table Project_belong_info :
+1) Status: la Status cua member
+0:Chưa approve/未承認
+1:Đã approve/承認済
+2:Reject/却下
+3:Delete/削除
+
+2) isManager:  Quyền Manager> other manager> member 
+0= Member
+1= other manager
+2= Manager
+
+4/5/2017
+- DB:
++ Create DB tren server or local:
+>> Start Mysql WorkBench >> Database connect to >> 
+	1. su dung mac dinh -> local.
+	2. su dung Host name cua khach hang cung cap -> server.
+>> 
+	1. Create Table >> ok.
+	2. Run Script Create table da created >> ok.
+
++ import data to Mysql by XXX.CSV
+ Open XXX.csv by nopate++ -> copy all data(tru header) -> paste vao table data in Mysql -> ok. 
+
++ Setup MySQL:
++ user/pass: root
+trong file: filePath.properties
+-> cai Mysql WorkBench > connect toi MySQL > Run toan bo code Sql trong file isv_db.sql > create xong DB.
+-> config host lien ket toi DB trong file C:\home\tomcat\portal\ISVToolLicenseManager de su dung DB trong MySQL nay.
++ neu su dung DB tren host khach hang thi o day: C:/common/env.properties va C:/common/serversetting.properties
++ Dung Tomcat 7, JDK8.
+- Run: 
++ ISVToolLicenseManager
++ PortalCoreService
+-> ISVToolLicenseManager goi PortalCoreService o file:
+
+- sau khi dang nhap 30' https://meportal.cad.css.fujitsu.com/pub/index.html -> F12>Session> lay token lai 1 lan.
+-> BaseAction.java >  String tokenId="AQIC5wM2LY4SfcwipXIExW0s8ImC2bYTCrsuh2BLagrBwJ4.*AAJTSQACMDE.*";
+
+- copy 2 folder: C:\common va C:\home vao thu muc C:// > sau do config lai duong dan den 2 folder nay o trong file Constanst.java
+- Coppy file cacerts vào trong C:\Program Files\Java\jdk1.8.0_45\jre\lib\security // cho minh chon Jdk1.8 la moi truong de run.
+
+- Run project: run ca 2 service tren.
+
+- Dung Anotation de mapping Data Entity tu java toi DB.
+@Transient
+private String memberName; 
+-> truong nay chi de hien thi tren page.jsp va khong thuc hien thao tac voi DB nhu update, insert,.. 
+
+- Dung khai bao Class nay trong web.xml de su dung duoc cac hang so .properties
+<listener>
+	  	<listener-class>
+	          jp.meportal.isv.listener.GlobalMessagesListener
+	    </listener-class>
+</listener>
+
+- trong Class GlobalMessagesListener thi doan code:
+private static final String DEFAULT_RESOURCE = "message";// thi "message" la ten cua file: message.properties
+
+// khai bao mapping cac entity voi Hibernate thi khai bao o trong file HibernateUtil.java.
+
+
+// Coding:
+
+- PortalCoreAccessManager trong package: jp.meportal.isv.common dung de lay du lieu tu service khac la: PortalCoreService
+
+- Create Entity:
+
+- Page1: initRegisterProject.action
+
+
+-Dictionary:
+追加: insert
+更新: update
+削除: delete
+
++ ham convert Date theo dinh dang co san:
+String currentDate = DateUtils.convertDateToString(new Date(), Constants.DATE_TIME_FORMAT);
++ test sending mail: https://10.16.51.140/owa/
+
+
+// Build Source len server cho Test:
+>> chon DA: ISVToolLicenseManager >> chuot phai > Export > War file > copy file nay len Server WinSCP(///usr/local/apache-tomcat-7.0.56/webapps)
++ Chinh sua duong dan o file: Contanst , C://.
+
+- Luồng DA:
+
+>> Struts.xml > Interceptors( call Class AuthenticationInterceptor)
+>> AuthenticationInterceptor > Call func: isValidateUser()
+>> isValidateUser() > call func: getUserInfo()
+>> getUserInfo() > call PortalCoreAccessManager() 
+>> PortalCoreAccessManager() 
++ PortalURL() > Call: loadConfig() // call config PROPERETIES_SERVER : "/home/tomcat/portal/ISVToolLicenseManager/serversetting.properties";
++ getCommonClient(): set setConnectionTimeout và setSoTimeout.
+>> 
+
++ su dung ham nay de load config send mail:
+private static void emailSettingLoadConfig() throws ConfigurationException {
+		PropertiesConfiguration loadconfig = new PropertiesConfiguration(
+				Constants.PROPERETIES_EMAIL_PATH);
+		// keyを取り出す
+		if (emailProperties == null) {
+			// 未ロード、またはメッセージファイルが更新された場合はロードする.
+			synchronized (lock) {
+				emailProperties = loadconfig;
+			}
+		}
+	}
+
+- Cach truy van DB:
+TH1: 1 param
+public List<MemberByProjectIdFormBean> listMemberByProjectId(int seqNo) {
+			session.beginTransaction();
+			Query q = session
+					.createQuery("select bl.project_id.projectName,bl.project_id.managerName, "
+							+ " bl.member.email,bl.updateDate,bl.member.seqNo,bl.isManager"
+							+ " from ProjectBelongInfo bl where bl.project_id.seqNo = ? and bl.status=1");
+			q.setParameter(0, seqNo);
+			listMember = q.list();
+}
+
+TH2: 2 param
+public List<MemberByProjectIdFormBean> listMemberByProjectId(int seqNo, int status) {
+			session.beginTransaction();
+			Query q = session
+					.createQuery("select bl.project_id.projectName,bl.project_id.managerName, "
+							+ " bl.member.email,bl.updateDate,bl.member.seqNo,bl.isManager"
+							+ " from ProjectBelongInfo bl where bl.project_id.seqNo = ? and bl.status= ?");
+			q.setParameter(0, seqNo);
+			q.setParameter(1, status);
+			listMember = q.list();
+}
+
+// Redirect lai trang sau khi submit thanh cong:
+<action name="registerProject" class="jp.meportal.isv.action.ProjectAction" method="registerOrUpdateProject">
+		    <result name="error">jsp/error.jsp</result>		
+		    <result name="input">jsp/project/registrationProject.jsp</result>	
+			<result name="success" redierect >initRegisterProject</result>
+			
+=> initRegisterProject : la action de dieu huong den trang registrationProject.jsp
+
+  <action name="initRegisterProject" class="jp.meportal.isv.action.ProjectAction" method="initRegisterProject">
+	        <result name="error">jsp/error.jsp</result>	       
+			<result name="success">jsp/project/registrationProject.jsp</result>		
+	</action>	
+							
+							
+// TODO: 
+PortalURL.java
++ synchronized (lock)
++ lastmodified < loadconfig.getFile().lastModified())
++ Pagination : su dung thu vien js co san.
+
+ProjectAction.java
+if (userType.equals(UserType.SUPPORTER.toString())) {
+					isManager = Constants.MANAGER_FALSE;
+
+				} else if (userType.equals(UserType.USER.toString())) {
+					isManager = Constants.MANAGER_TRUE;
+
+// Task Plus:
+8/5/2017
+- Create a task show list projects on tab thu 2, line 1 : Done.
+
+- Create Screen page:
+
+- bug: 
++ Sau khi nhap gia tri update project > click update && send mail > 
+ ++ man hinh de lai giao dien nhu cu : oky.
+ ++ nhan refresh > cac feld input tu dong bi xoa trang di.
+ 
+ => detect F5 -> call 1 action khac.
+ Resolved:
+ b1: Create func:
+ public void getOlData(){
+ UserInfo userInfo = getUserInfo(null, ServletActionContext.getRequest());
+		if (userInfo != null) {
+
+			regProFormBean = new RegistrationProjectFormBean();
+			regProFormBean.setManagerName(userInfo.getUserName());
+			regProFormBean.setEmailAddress(userInfo.getEmailAddress());
+
+			String loadOriginCode = userInfo.getUserBelongDepartmentCd();
+			regProFormBean.setLoadOriginCode(loadOriginCode);
+			String[] loadOriginCodeList = loadOriginCode.split("");
+
+			if (loadOriginCodeList != null && loadOriginCodeList.length > 0) {
+
+				regProFormBean.setLoadOriginCode1(loadOriginCodeList[0]);
+				regProFormBean.setLoadOriginCode2(loadOriginCodeList[1]);
+				regProFormBean.setLoadOriginCode3(loadOriginCodeList[2]);
+				regProFormBean.setLoadOriginCode4(loadOriginCodeList[3]);
+				regProFormBean.setLoadOriginCode5(loadOriginCodeList[4]);
+				regProFormBean.setLoadOriginCode6(loadOriginCodeList[5]);
+				regProFormBean.setLoadOriginCode7(Constants.ZERO);
+				regProFormBean.setLoadOriginCode8(Constants.ZERO);
+				regProFormBean.setLoadOriginCode9(Constants.ZERO);
+
+			}
+			// init costCode
+			regProFormBean.setCostCode1(Constants.ZERO);
+			regProFormBean.setCostCode2(Constants.ZERO);
+			regProFormBean.setCostCode3(Constants.ZERO);
+			regProFormBean.setCostCode4(Constants.ZERO);
+
+		} else {
+			exceptionMsg = ErrorCodes.ERRORS_CODE_IN_VALID_USER;
+		}
+ }
+ 
+ b2: chen no vao doan code sau de set lai value (registerOrUpdateProject.java)
+ if (warningMsg!= null) {
+						//set warningMsg
+						setWarningMsg(warningMsg);					
+						
+						// Set lai value vao day
+						getOlData();
+						
+						// update project list
+						listPro = projectBusiness.listAllProjectByStatus(Constants.APPROVED_STATUS);
+						return SUCCESS;
+					}
+ => Ok.
+
+Code: check javaScript.
+// 			document.getElementById("registrationProjectForm").reset();
+			/* $("body").keydown(function(e) {
+				if (e.which == 116) {
+					alert("keydown: " + e.which);
+			document.getElementById("projectName").value = "";
+					alert(document.getElementById("projectName").value);
+					sessionStorage.clear();
+					alert(document.getElementById("projectName").value);
+					window.location.reload(true);
+					
+				}
+			}); */
+
+// Cach tao 1 Action moi trong file jsp:
+C1: Su dung javaScript:
+tao 1 form trống(nam trong <body> va o ngoai tat cac cac the div)
+<form id="reLoadRegisterForm" action="initRegisterProject" method="post">		
+</form>
+
+>> goi javaScript de bat su kyen F5(event bat ky) voi ID cua form[].
+
+$("body").keydown(function(e) {
+			if (e.which == 116) {
+			document.getElementById("reLoadRegisterForm").submit(); 
+	}
+});
+>> sau khi bat dc su kyen Event F5 nay , javaScript se submit() cai form co ID nay >> se goi action trong form: action="initRegisterProject"
+ma action nay da duoc khai bao trong Strust.xml -> thuc hien duoc viec thay doi action.
+
+
+C2: Su dung Ajax:
+>> su dung ajax goi <action name="initAction"> trong Strust.xml -> return result(.json)
+-> su dung result de check dieu kyen, set du lieu,..thuc hien tinh toan..
+function getUserRole() {
+        	 $.ajax({url: "initAction", success: function(result){        		 
+        		 var isSupportor = result.isSupportor;
+        		 if(isSupportor == true){
+        			 $("#li_project_approval").show();
+        			 $("#li_project_license").show();
+  					 $("#li_project_approval_license").show();
+        			 $("#li_project_license_main_title ul").removeClass().addClass('dropdown-menu');
+        			 $("#li_project_license_main_title a span").removeClass().addClass('caret');
+        			 
+        		 }
+            
+             }});
+        }           
+        window.onload = getUserRole;
+		
+C3: Send data thông qua Ajax(Hay)
+https://stackoverflow.com/questions/4112686/how-to-use-servlets-and-ajax
+
+
+/// Bug man hinh Approve.
+Approve nhieu()
+Reject nhieu;
+Da Approve thi khong Approve nua va khong duoc Reject.
+// confirm neu 1 cai fail thi co rollback tat ca hay k ? 
+hay nhung cai hop le thi van duoc approve.
+
+
+
+=> solution: gom tat ca cac status cua cac project lai thanh 1 list(dung for)
+=> check du lieu status >> for tiep de check xem nhung cai nao duoc approve
+=> insert data base.
+
+ // doan code
+ $(this).siblings('input:checkbox').prop('checked', false);
+ => siblings: lua chon tat cac cac the input:checkbox o cung class va set gia tri checked cho no la false
+ >> co nghia la trong 1 list dach sach checkbox thi chi check dc 1 gia tri dang check ma thoi.
+ 
+ // doan code:
+  $( '.table' ).each(function( i ) { 
+
+    var worktable = $(this);
+    var num_head_columns = worktable.find('thead tr th').length;
+    var rows_to_validate = worktable.find('tbody tr');
+
+    rows_to_validate.each( function (i) {
+
+        var row_columns = $(this).find('td').length;
+        for (i = $(this).find('td').length; i < num_head_columns; i++) {
+            $(this).append('<td class="hidden"></td>');
+        }
+
+    });
+
+});
+ 
+=> $(this) ~ .table
+=> // code:  $(this).append('<td class="hidden"></td>');
+Do theo thu vien sort table hien tai cua js no dang fix cung 5 column dau tien -> lam nhu nay de no sort duoc tat ca cac column trong table.
+
+- Khi submit thi no se goi 1 Action di kem voi co the co gui di 1 vai input 
+>> ben back-end(action.java) tao 1 the hien: name === name ben frontend
+>> tao get,set cho name nay >> getname() nay la no tu dong lay duoc value ben frontend.
+
+
+// Fixbug:
+Đã có thể tạo được DB rồi. Cám ơn anh nhé.
+Tuy nhiên, lần này menu [プロジェクト承認/Approve project] lại không được hiển thị.
+Mail address của Takagi đã đăng ký vào support DB rồi.
+Anh có biết nguyên nhân là do đâu không?
+
+=> solution: chi can email dang nhap co tồn tại trong bảng SupportDB thì có hiển thị tab Approve.
+
+test: takagi@jp.fujitsu.com
+<script type="text/javascript">
+	function getUserRole() {
+		$.ajax({
+			url : "initAction",
+			success : function(result) {
+				var isSupportor = result.isSupportor;
+				if (isSupportor == true) {
+					$("#li_project_approval").show();
+					$("#li_project_license_main_title ul").addClass('dropdown-menu');
+					$("#li_project_license").show();
+					$("#li_project_approval_license").show();
+				}
+			}
+		});
+	}
+	window.onload = getUserRole;
+</script>
+
+
+<s:iterator value="listProjectBelongInfo" var="project">					  
+							  <form id="updateProjectInfoForm" name="updateProjectInfo" action="updateProjectInfo.action" method="post"  onsubmit="return validateUpdateProjectInfoForm(this);" >								 	
+								 <tr>
+									<td class="table-row-data"><input type="submit" class="btn btn-info btn-sm"  style="margin: 5px;" value="<s:text name="isv.update_button.label" />"  /></td> 
+									<td class="table-row-data"><input style="width:100px;border:none;background-color:#f5f5f5;"  type="text" id="projectName1" name="regProFormBean.projectName" readonly value="<s:property value="#project.project_id.projectName" />"  /> </td>
+									<td class="table-row-data"><input style="width:100px;border:none;background-color:#f5f5f5;"  type="text" id="managerName1" name="regProFormBean.managerName"  value="<s:property value="#project.project_id.managerName" />"  />  </td>
+									<td class="table-row-data"><input style="width:150px;border:none;background-color:#f5f5f5;"  type="text" id="emailAddress1" name="regProFormBean.emailAddress"  value="<s:property value="#project.project_id.managerEmail" />"  /> </td>
+									<td class="table-row-data"><input style="width:100px;border:none;background-color:#f5f5f5;"  type="text" id="loadOriginCode1" name="regProFormBean.loadOriginCode"  value="<s:property value="#project.project_id.loadOriginCode" />"  />  </td>
+									<td class="table-row-data" ><input style="width:60px;border:none;background-color:#f5f5f5;"  type="text" id="costCode1" name="regProFormBean.costCode"  value="<s:property value="#project.project_id.costCode" />"  /></td>
+									<td class="table-row-data"><input style="width:60px;border:none;background-color:#f5f5f5;"  type="text"   id="productNumber1" name="regProFormBean.productNumber" value="<s:property value="#project.project_id.productNumber" />"  /> </td>
+									<td class="table-row-data"><input style="width:300px;border:none;background-color:#f5f5f5;"  type="text"  id="comment1" name="regProFormBean.comment"  value="<s:property value="#project.project_id.comment" />"  placeholder="申請理由を入力してください"   /> </td>
+				               </tr>
+				             </form> 	                  	
+			               </s:iterator>
+						   
+						   
+						   String email = getEmailAddress();
+		List<Support> listSupports = supporterDao.getListSupportByEmail(email);
+		
+// get all project list when User login as Supportor.
+		if (!listSupports.isEmpty()) {
+//			listPro = projectBusiness.listAllProjectByStatus(Constants.APPROVED_STATUS);
+			listProjectBelongInfo = projectDao.listAllProjectBelongInforByStatus(Constants.APPROVED_STATUS);
+			// just get project list Userlogin 's when Userlogin as not Supportor.
+		} else {
+			listProjectBelongInfo = projectDao.listAllProjectByStatusAndEmail(email,
+					Constants.APPROVED_STATUS);
+		}
+		
+String currentDate = DateUtils.convertDateToString(new Date(), Constants.DATE_TIME_FORMAT);
+String userName = userInfo.getUserName();
+
+
+18/05/2017
+// fix bug 18:
+Run SQL OK.
+select * from isv_db.project_belong_info bl join isv_db.project_member_info ml where bl.status = 1 and bl.isManager IN (1,2) and email = "ThaiHX1@fsoft.com.vn";
+// bug du lieu khong on dinh:
+ + Nguyen nhan: khi show du lieu thi chi can Open session len de lay du lieu ra thoi,
+và khi insert hay update,..vơi DB moi dung cai nay .getCurrentSession(); de set du lieu moi.
+Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+ + Giai pháp: khi show du lieu thi chi can Open session len de lay du lieu ra thoi, 
+-> nen thay .getCurrentSession(); => Session session = HibernateUtil.getSessionFactory().openSession();
+
+@SuppressWarnings("unchecked")
+    @Override
+    public List<ProjectBelongInfo> listProjectByEmailAndIsManager(int status, List<Integer> listIsManager, String email) {
+        List<ProjectBelongInfo> listPro = new ArrayList<ProjectBelongInfo>();
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        try {
+            session.beginTransaction();
+            String sql = "";
+            Query query = session.createQuery("select bl from ProjectBelongInfo bl "
+                    + "where bl.status=:status and bl.isManager IN(:listIsManager) an");
+            query.setParameter("status", status);
+            query.setParameter("listIsManager", listIsManager);
+//            query.setParameter("email", email);
+            listPro = query.list();
+        } catch (HibernateException e) {
+            log.error(e.getMessage(), e);
+        }
+        return listPro;
+    }
+	
+// task: man hinh tab1 menu thu 2 cho ca 3 cai button disable khi user ko co quyen quan ly project do.
+hien tai moi chi disable 2 button sau cung.
+=> check disable button o trong back-end ngay ham khoi tao: initRegisterProjectMember() -> goi ham checkStatusIsManagerProject() de check disable button.
+
+
+
+ 
+// sua lai List<Project> thanh List<ProjectBelongInfo> trong ManagerAction.java
+
+
+// Import check data in csv file: https://www.mkyong.com/java/how-to-read-and-parse-csv-file-in-java/
+key work: 
++ https://coderanch.com/t/540937/framework/Export-data-csv-file-Struts
++ Show popup when download CSV file java struts 2
++ Creating and Downloading CSV from Struts2
+
+
+
+fix bug: ProjectDaoImpl.java:   projectBelongInfo.setStatus(Constants.APPROVED_STATUS); => Done.
+
+
+
+// Phase3: MePortal.
+Study and Estimation.
+
+DB:
+- Table: project_info
+-- insert them 3 truong dl: 
++ approval_dated: Date đã được support approve.
++ update: Người đã update project_member_info:seq_no (lay truong seq_no trong table project_member_info)
++ approver: Người đã approve support:seq_no(lay truong seq_no trong table support)
+
+
+- Tao them 3 bang moi: 
++ catalog_info:(ID cua bang nay de fill du lieu cho truong catalog_id trong table license_info) : du lieu nay duoc lay tu file import CSV.
++ license_info:(truong Project_id la seq_no cua table project_info)
++ ipaddress_info: (truong Project_id la seq_no cua table project_info)
+
+-> Task can thuc hien:
++ Import file CSV vao Databse(catalog_info).(pending - Phase sau lam)
++ Create table with many input tag.
++ Merge column of table:(cho phan check input o thang thu 3 hien thi 2 nam. link: https://stackoverflow.com/questions/28628273/merge-table-cells-using-jquery)
+check cac thang:
+++ neu cung thuoc 1 nam -> marge het tât ca 12 thang vao 1 ô.
+++ neu thuoc 2 nam khac nhau -> marge tât ca 12 thang vao 2 ô canh nhau.
+$('.third-row td:eq(2)').attr('rowspan','2').parent().next().find('td:eq(2)').remove()
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<table border="1" width="100%">
+<tr>
+	<td>1</td>
+	<td>1</td>
+	<td>1</td>
+	<td>1</td>
+</tr>
+<tr class="third-row">
+	<td>1</td>
+	<td >2</td>
+	<td>3</td>
+	<td>4</td>
+</tr>
+<tr>	
+	<td>1</td>
+	<td>2</td>	
+	<td>5</td>
+	<td>6</td>
+</tr></table>
+
+=> co the thay rowspan = colspan.
+
+++ Click Button -> insert a new row: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_table_insertrow
+
+- Requirement:
++ Hien thi thong tin project ma member do thuoc ve.
++ 
+
+
+// MySql
+insert into `isv_db`.`catalog_info`(`seq_no`,`vendor_name`,
+`tool_name`,`future_name`,`member_price`,`regular_price`,`keep_number`,`overview`,`note`) 
+values ('3','3','3','3','3','3','3','3','3');
+
+- TH: khong co du lieu trong table catalog_info thi khong hien thi man hinh dang ky license_info(2) va ipaddress_info(3)
+- TH: khong co project thi khong hien thi ca 3 man hinh project(1),license_info(2) va ipaddress_info(3)
+
+- Show data:
+for(1)
+load all Catalog
+list catalog_info
+
+for(license_info dua theo catalog_id )
+load all license_info tim dc
+-> show list license_info tim duoc.
+SELECT * FROM isv_db.license_info;
+
+SELECT * 
+from isv_db.catalog_info 
+as ct 
+inner join isv_db.license_info
+as ls 
+
+SELECT *
+from isv_db.catalog_info 
+as ct 
+inner join isv_db.license_info
+as ls 
+where ct.seq_no = ls.catalog_id
+
+catalogIdChecked
+14/06/2017
+- pending pharse 2
+- default hien thi member_price
+
+COMPARE 
+- The differences between request.setAttribute(key, value) and session.setAttribute(key, value).
+(http://www.theserverside.com/discussions/thread/29657.html)
+
+request.setAttribute only make the key available in the following jsp page. 
+But session.setAttribute will make the key available in many pages, as long as in the same session, and browser not close.
+
+For example, the flow like page1->page2->page3->page4. session.setAttribute will make the key available in all pages. 
+But if we use request.setAttribute in page2, then only page3 can get the key value set in page2.
+						  
+Task Update DB:
+find member where email = ?
+
+listLink -> size()
+listmanager 
+
+listIsmanager<Int>;
+listProjectID<Int>;
+
+for(i = 1; i < listLink.size(); i++){
+	if(listmanager.get(i) =! 0){
+		listProject.add(listLink.get(i));
+	}
+}
+
+show project(List<int> listProject){
+	ListProject = query("form Project where projectId in(listProject)");
+}
+
+
+=> Task List:
+
+1. Edit Insert project -> update member.v
+2. Edit insert member -> update member.v
+3. update member - > update project, project_belong_info, member: v
+4. delete member -> update project, project_belong_info, member.v
+6. update member when insert project in member. v
+5. show data -> update 3 man hình 1,2,3(chi dua vao bang member)
+
+SELECT * FROM isv_db.project_info as p where p.status=1
+				and (p.seq_no in (select distinct pbi.project_id
+				from isv_db.project_belong_info as pbi where pbi.member = 2 
+                and pbi.isManager in (1,2,3)) or p.manager_email = "takagi@jp.fujitsu.com");
+				
+				
+- Update Manager member:
+String[] member = member.getmember().slpit(",")
+
+- Dang ky license_info mennu:
++ Tao menu 2 menu:
+0 ライセンス申請▼
+1 ライセンス申請
+2 ライセンス承認
+
+Phan quyen user support thi hien thi ca 2 menu 1,2
+Phan quyen all user thi hien thi menu 1.
+
+
+// su dung : @Fetch(FetchMode.SELECT) de load tat ca cac relation lien quan den bang nay, ma ko bi loi session.
+   @OneToMany(fetch = FetchType.LAZY, mappedBy = "project_id")
+    @Fetch(FetchMode.SELECT)
+    private List<ProjectBelongInfo> projectBelongInfoList;
+va add @Proxy(lazy = false) vao entity: Member.
+
+
+Su khac nhau giua LAZY va EAGER
+http://o7planning.org/vi/10225/tra-cuu-java-hibernate
+
+LAZY: nói với Hibernate rằng, hãy tải dữ liệu một cách lười biếng.
+Chẳng hạn bạn có một đối tượng Account, và gọi phương thức getOpenBranch() nó trả về một đối tượng Branch, đối tượng Branch chỉ trường (field) branchId được gán giá trị, các trường khác thì không. 
+Thực tế hibernate chưa tải dữ liệu từ bản ghi tương ứng của bảng BRANCH vào đối tượng này. Nó chỉ thực hiện truy vấn dữ liệu khi bạn làm gì đó với đối tượng Branch vừa có được, chẳng hạn gọi phương thức branch.getName().
+
+EAGER: nói với Hibernate hãy truy vấn toàn bộ các cột của bảng liên quan.
+Chẳng hạn bạn có đối tượng Account, và gọi phương thức getOpenBranch() trả về đối tượng Branch đã có sẵn các giá trị cho các trường ( name, address, ...). Thực tế dữ liệu của nó có được cùng trong 1 lần truy vấn với bảng Account.
+Bạn nên sử dụng LAZY thay vì EAGER vì lý do hiệu năng chương trình.
+
+
+29/06
+Dich tu secccess sang tieng Nhat,
+tam thoi de la: 成功
+
+// TODO list:
+- Hien thi registation license:
++ create Q&A confirm ve cac trang thai cua status.
++ FPT dang hieu va se lam: se chi hien thi 2 trang thai cua Status registation la: blank (Status trong Bean set la 2)va da dang ky(mau den - status: 0 trong DB -> set lai Status trong Bean la 0)
+- send mail khi dang ky license.v
+- validate input form: number and isblank.
+- check show date update when submited registration.v
+
+// check insert month == 3
+				
+				
+
+Bug:	
+them Tagagi vao thanh member Project cua thang Thai Xuan Hoang.
+-> dang nhap bang Thang tagagi -> hien thi ca Project cua Thai Xuan Hoa(sai)
+
+
+
+
+// create tai lieu:
++ coverity:
+D:\MePortal\01.Documents\06.UT\05.MePortal\ISV\ISV_Coverity
+
++ Tai lieu + source de o day: D:\MePortal\01.Documents\08.Deliverable\05.MePortal\20170703
++ check validate tung cot mot xong cho no insert data.
++ them cot<td> dau phan cach vao cho cac thang.
+
+
+// 6/7/2017
+ISV Pharse 3
+- Approve License Screen
+
+Q&A: NO23 
+Tham khao: ISV課金_v6.docx
+Hien trang: file ISV課金_v6.docx dang mo ta man hinh Approve License trong do co truong nguoi da dang ky [申請者].
+Khi hien thi du lieu cho truong nay [申請者] thi chung toi nhan thay co issue:
+Neu cho ca other_manager va Manager deu dang ky duoc license thi se bi conflig du lieu o phan cot nguoi da dang ky [申請者]
+do do chung toi co y hieu la chi Manager moi duoc quyen dang ky license, nhu vay co dung khong?
+Mong cac ban confirm giup.
+
+=> KH tra loi:(11/07/2017)
+Nhờ anh fix sao cho trong khi đang đăng ký license thì không thể đăng ký thêm license được nữa nhé.
+Nếu click button 申請/đăng ký thì sẽ hiển thị error message: "現在ライセンス申請中の為、申請できません/ vì hiện đang đăng ký license nên không thể đăng ký được".
+Làm như vậy thì tôi nghĩ rằng sẽ không phát sinh confilct.
+
+=> Co nghia la: khi 1 project da co it nhat 1 license co trang thai la: “申請中/Đang đăng ký” roi thi khi nguoi khac hay chinh nguoi do vao dang ky hoac update deu bi 
+thong bao error: "現在ライセンス申請中の為、申請できません.
+(chờ supporter approve or reject license thi sau do moi co the dang ky, update lai).
+
+Cac truong trong approve License Screen:
++ status: Status cua 1 list License trong Project.
++ project_name:
++ comment: comment trong project.
++ registered_user: "Q&A: chi la Manager - nguoi dang ky project"
++ create_date: Ngay request dang ky license(lay ngay dang ky hoac update cuoi cung)
++ approver:
++ approve_date:
+
++ fix bug: 6/7/2016.
+II. ISV: Phase 2.
+1. Ghi địa chỉ IP -> Ấn đăng ký -> Ấn F5, chuyển tab khác thì bị mât IP.
+- FPT: Logic trương chình hiện tại như vậy -> Cải thiện = cách sau khi đăng ký sẽ load IP từ DB.
+2. Format về số tiền -> 2E+3 -> Lỗi FPT về update xử lý logic 
+3. Sửa lại các record “申請済/Đã đăng ký” -> “申請中/Đang đăng ký”
+- Sau khi approve xong mới để là “申請済/Đã đăng ký”.
+
+  FPT sẽ fix gửi trong source t3 tuần sau (07/11)
+
+- Trong việc quản lí bugs: similar (lỗi tương tự) và degrade (lỗi phát sinh)
+
+2. Lam man hinh Detail License:
+- Giao dien:
+- Show Data:
+	Ve giao dien data License:
+		+ show nhung cai da approve:
+		+ show nhưng cai chua approve:
+	Ve IpAddress:
+		+ show data from DB
+		+ show approve/unapprove.
+		+ count so luong IpAddress da duoc request + apporve:
+		(xx.xx.* : thi rank la tu 0->255 = 256 IP duoc request)
+- fix comment: show ManagerName(ko co trong DB) tu portalcore su dung ham: getMembersListById de lay list email -> ManagerName.
+
+
+// 13/7/2017
+- 今回:(this time): bay gio.
+- 前回:(last time): truoc do.
+- 合計 : Tổng số.
+- Hien thi IpAddress:
++ TH1: ko co scrollbar + hien thi so luong ip dang ky o ngay duoi list IpAddress.
+xoa <tbody position: absolute>
+them: <tfoot> vao giua 
+<thead> 
+<tfoot>
+<tbody>
++ TH2: co scrollbar va ko hien thi so luong ip dang ky o ngay duoi list IpAddress.
+Tao table moi ngay nhu code hien tai.
+
+- Tạo Scrollbar table hay: https://codepen.io/sambible/pen/yOqKaN
+- Tạo Table hay full-option: https://datatables.net/extensions/index
+vd:https://datatables.net/examples/styling/bootstrap.html
+thư viện: <script type="text/javascript" src="js/sort_table/jquery.dataTables.min.js"></script>
+edit thư viện:
++ filter: tự động.
++ search tự động.
++ phân trang tự động.
++ thống kê bản ghi tự động.
++ ..
+vd: cách tạo
+<!html>
+
+<div>
+	<table id="table_example" class="table table-bordered dataTable">
+		<thead></thead>
+		<tbody></tbody>
+	</table>
+</div>
+
+<script type="text/javascript" src="js/sort_table/jquery.dataTables.min.js"></script>
+<script>
+	$('#table_example').DataTable( {
+	"destroy": true,
+	"scrollY": "941px",// scrollbar theo chieu doc(độ rộng(heigh) body).
+	"scrollX": true,// scrollbar theo chieu ngang.
+	"bPaginate": false, // true -> hiển thị phân trang.
+	"bFilter" : false, // true -> tìm kiếm theo từ khóa.
+	"bInfo" : false, // true -> thống kê bản ghi.
+	fixedColumns: true,
+	"emptyTable" : false,
+	"scrollCollapse" : true,
+	"processing": true,
+	"lengthChange" : false,
+	"order": [[ 1, "desc" ]]
+} );
+</script>
+
+</html>
+
+// 18/7/2017
+
+- 却下/Reject:
++ chuyen trang thai: status - cua project show = 2
++ khi da approve roi thi khong duoc reject(bao error)
++ Trường hợp comment không được mô tả thì exit error.
+Hiển thị dialog alert của “却下理由を記載してください/Hãy mô tả lý do reject”
++ Phát hành mail reject
+
+1. JAVA - Note - A. Linh 19/7/2017
+1. Các method trong các class Action đang validate user bằng cách :
+	UserInfo userInfo = getUserInfo(null, ServletActionContext.getRequest());
+>>> Như vậy sẽ thừa isValidateUser() trong class BaseAction.java
+>>>	Có action thì dùng userInfo, có action không dùng (kyểm tra và đồng bộ lại)
+	
+2. class AuthenticationInterceptor.java đang không được sử dụng (kyểm tra rồi xóa đi)
+3. kyểm tra lại toàn bộ java doc cho các class
+	- Thiếu description cho các method
+	- Thiếu description cho các property (get, set)
+4. Hầu như đang khai báo object, variable trong vòng for (xem lại tất cả)
+	VD : - line 210 trong class ManagerAction.java
+		 - line 315 trong class ManagerAction.java
+		 
+2. JAVA - Note - A. Linh 21/7/2017
+1. Class ManagerAction.java : Các đoạn code sau đang giống nhau (vì anh ko làm nên sẽ khó nắm toàn bộ, tư duy đối với nhiều xử lý khác trong project)
+	for (int i = 0; i < membersList.size(); i++) {
+	...
+	}
+>>> Viết một function để dùng chung
+
+	for (int i = 0; i < listMemberByProjectId.size(); i++) {
+	...
+	}
+>>> Viết một function để dùng chung	
+
+2. Class ProjectAction.java : Các đoạn code sau đang giống nhau (vì anh ko làm nên sẽ khó nắm toàn bộ, tư duy đối với nhiều xử lý khác trong project)
+	for (int i = 0; i < memberByIdList.size(); i++) {
+	...
+	}
+>>> Viết một function để dùng chung
+
+	for (int i = 0; i < listMember.size(); i++) {
+	...
+	}
+>>> Viết một function để dùng chung
+
+3. Class MemberDaoImpl.java (xem tương tự với các class khác)
+	- method updatePermissionMember() >>> do đã khởi tạo boolean result = false; >>> vì thế ko cần set
+	result = false;
+	- Tương tự với các method insertMemberAndProjectBelongInfo(), insertMemberIntoProjectBelongInfo(),
+	updateMemberIntoProjectBelongInfo(), insertMemberIntoProjectInfor(), updateMemberAndProjectInfo(),
+	deleteMember()
+	
+4. Class StringUtils (nên xóa) (dùng của java)
+	- Đang được dùng trong class EmailUtil.java (sẽ thay đổi những chỗ khi xóa Class StringUtils)
+
+5. Clear warning trong các class sau : (chú ý : review toàn bộ project nhé)
+	LicenseAction.java
+	LicenseBusinessImpl.java
+	ProjectBusinessImpl.java
+	ApprovedLicenseDaoImpl.java
+	LicenseDaoImpl.java
+	MemberDaoImpl.java
+	ProjectBelongInfo.java
+
+============================================================================
+	
+JAVASCRIPT :
+1. licenseRegister.js
+	- Xóa 4 line đầu tiên
+	- fomat comment ko đồng bộ (line 435 đến 438) (kyểm tra tương tự các function khác)
+
+2. member.js
+	- chỉnh lại format comment ở 3 line đầu
+
+============================================================================	
+	
+JSP :
+1. topmenu.jsp
+	- Nghĩ cách xử lý cho function getUserRole() { >>> Hiện tai đang bị chậm
+	
+2. kyểm tra lại format trong các trang jsp (thấy đang xô lệch, xóa comment, line khoảng trắng)
+
+3. Xóa thư mục /ISVToolLicenseManager/WebContent/jsp/popup (do copy từ HPC)
+
+==============================================================================
+=> 
++ Mẫu: ManagerAction.java
++ phần interface: bussiness -> không cần tạo java docs, chỉ cần tạo 1 dòng commnet mô tả ở trên hàm.
+
++ LicenseAction: done.
++ ManagerAction: done.
++ MemberAction: done.
++ ProjectAction:
++ SupporterAction:
++ BaseAction:
++ ApprovedLicenseAction:
+
+
+Dear Lượng,
+Lịch nghỉ mát của team Meportal như của chị Takagi nhé.
+
+Cụ thể từ 02/08/2017 đến 04/08/2017
+
+Best regards,
+LinhNN6
+
+<result name="login" type="redirect">../portal/index.html</result>
+
+
+Note:
+- ApprovedLicenseBussinessImpl.java 
+-> func:buildMapProject() // code chuc nang tai day la sai cau truc.
+-> fun: rejectIpAddressLicense(), approvedLicense() co khai bao trong Business và khong thay co trong action. // LamTV4
+
+- class:MemberBusinessImpl 
+-> getMemberInfoList(), getAllMailManager()// -> chuyen ra action.
+-> getOtherManagerById(); getOtherManagerList() -> co khai bao trong BusinessImpl và khong Override duoc.(can khai bao trong Business)
+
+- SupporterBusinessImpl:
+-> approveProject(), rejectProject(), deleteProject(), getMailList() -> chuyen sang action,
+
+TODO:
+- jp.meportal.isv.util ->  moi lam moi: DateUtils.java
+- jp.meportal.isv.dao.impl
+
+- LinhPH9 review // 25/7/2017
+
+1. CLASS ApprovedLicenseAction 
+
+  - Xóa 1 số comment ko cần thiết. VD: Line 134, 609
+
+ ===== Method initApproveLicenseAction =====
+
+  - Line 187 - 197 Nên sử dụng HashMap<String, String> với key là email, value là registerName sẽ map nhanh hơn thay vì tìm kyếm 2 vòng for lồng nhau O(n2)
+ 		   Chú ý Line 191 Khai báo biến trong vòng for. 
+
+  - Line 118 - 181  List License UnApproved và  List License Approved xử lý giống nhau ==> Cho vào 1 hàm riêng
+
+ ==== Method processLicenseApproved: =======
+
+  - Line 600-604: Ko cần thiết phải chuyển Array thành List.
+       ==> Đã hiểu lý do phải chuyển sang List<Integer> --> Để có thể sử dụng được method sau:
+         Sau khi xem qua method : public Project findProjectBySeqNo(int seqNo)
+         Các method gọi tới method này đều phải ép kyểu sang Integer
+	 Nếu thiết kế, sửa ngay từ đầu biến truyền vào là String thì sẽ tiết kyệm được nhiều công đoạn. Vì data lấy từ trang JSP ban đầu là String, nếu để tham số là int thì phải ép kyểu.
+	 Đoạn này sẽ phải sửa code hơi nhiều. Ko nên động lại nếu hệ thống đang chạy ổn định.
+
+  - Line 605 - 612 :đối tượng HashMap<> mapLicense sử dụng nhưng vô nghĩa ==> Xóa.
+
+  - Line 637 , 647 : chưa check null cho managerInfo
+
+  - Line 635 - 637: Đang đi theo đường vòng. New 1 list email chỉ để add 1 string vào ==> dùng 1 List<MemberJsonDto> chỉ để lưu 1 managerInfo ==> Chút nữa line 646 chỉ lấy managerInfo.get(0)
+                   Chú ý biến emailList line 634 được new trong vòng for chỉ để add 1 email vào list. 
+		  ==> Đánh đổi hiện năng hơi lớn.
+		 ==> Sang bên Portal Core viết 1 method overload cho pcMgr.getMembersListById(String email)
+  
+  - Line 622 và 633: Khai báo pcMgr line 622 nhưng lại new trong vòng for pcMgr = new PortalCoreAccessManager().
+    ==> Nên new lúc khởi tạo class vì object này được sử dụng nhiều lần.
+  
+----------------------------
+
+   ==== method approveOrRejectLicense ====
+  
+  - Line 213 và 214: Có thể dùng luôn hai biến global : projectIdList và comment thay vì tạo thêm 2 biến mới.
+
+  - Line 233 và 237: Khai báo biến trong vòng for
+  - Line 234, 235, 236:  Chưa check null cho project
+  
+--------------------------
+ ==== method getMemberByMailList =====
+  Method này rất vô nghĩa. Ta hoàn toàn có thể thay method này bằng pcMgr.getMembersListById(mailLicenseList)
+  ==> Xóa method này, thay vào đó, gọi trực tiếp từ portalCore.
+
+----------------------------------
+
+===== method detailLicense ====
+
+ - line 316 - 318: ipAddressInsertDBList là biến global: Đã new ở line 316 là vô nghĩa vì ở line 317 đã gán sang vùng nhớ mới.
+		   Với biến global tốt nhất ko nên new ở line 316 => Xóa line 316.
+
+ - Line 320-325: chú ý biến countStt = ipAddressInsertDBList.size() ; Không cần cộng dồn trong vòng for.
+                 Chú ý IpAddress.setCountStt(countStt); là vô nghĩa vì nó nằm ở cuối vòng for.
+-----------------------------------
+
+==== method processLicenseFormBean =====
+
+ - line 369 --> End: Khai báo biến trong vòng for khá nhiều. Vd: line 370, 387
+
+	   ===> Hạn chế bằng cách sử dụng vòng for: 
+		for(CatalogInfor catalog: listCatalogInfor) {}
+	        
+		thay vì sử dụng vòng for cũ: 
+		
+		for (int i = 0; i < listCatalogInfor.size(); i++) {
+            	   CatalogInfor catalogInfoToAdd = listCatalogInfor.get(i);
+		   ....
+		}
+
+
+ISV - Pharse4
+I) Man hinh Chi Tiet:  ライセンス利用状況
+
+0. search:
++ Project: mặc định có phải là all project ma user tham gia hoặc all projects nếu user là supporter ?
++ Năm tài chính:　mặc định có phải là năm hiện tại ko ? (vì năm hiển thị thì ko biết là năm nào?)
++ Tháng:　Tương tự năm?
+
+- Năm tài chính từ 1/4 đến hết tháng 3 năm sau. [KH confirm them: 取得するのは license_use_info:yearです。 -> lay Year tu bang license_use_info]
+- Nếu chọn năm tài chính 2017 và chọn tháng 1 -> dk search trong DB sẽ là tháng 1 năm tai chinh 2017(DB dang luu va hien thi theo nam tai chinh).
+https://stackoverflow.com/questions/19895159/how-to-fill-combobox-in-jsp
+
+
+1.1: 予算・実績[単位:千円]: Bảng Ngân sách / Thực tế [Đơn vị: Nghìn Yên] = Hien thi theo Năm.
++ 予算/Budget: du lieu license cua tung thang đã đăng ký và dc apporved(license_info) * gia sp(catalog_info) - LẤY ĐƯỢC.
++ 実績/Actual: Số lượng sử dụng thực tế - ĐƯỢC LẤY TỪ same_time_use_number(license_use_info) - LẤY ĐƯỢC.
+
+=> 
+tu bang: "license_use_info" cot IpAddress_seqNo -> lay duoc du lieu cua "same_time_use_number" theo nam, List<Thang>
+tu bang: ipaddress_info -> lay duoc IpAddress_seqNo thuoc Project nao.
+
+Solution:
+- 予算/Budget: Search base catalog_info va license_info -> list<LicenseManagerColumn>
+	+ Inner Join: catalog_id(2 bang) va year(license_info) = ? // 2017,2018
+	+ check project Id contain nhung license_info nao? 
+	-> show nhung cai contain bang cach set seqNo(LicenseManagerColumn) = projectId.
+	-> cộng dồn đăng ký của các tháng lại.
+	
+	1. beanRegister a0 = SELECT distinct project_id, sum(Apr) // distinct thi can ry Group By nua :-p
+					FROM license_info 
+					WHERE year := year and month:= month Group By project_id
+					--> project_id(seqNO), năm year, tháng month có số lượng license đăng ký là SumDK.
+					(viet 12 cau lenh cho 12 thang) 
+					--> List<list<beanRegister>{project_id(seqNO), năm year, tháng month, SumDK}>
+					
+- 実績/Actual: //Search base catalog_info va license_use_info -> list<LicenseManagerColumn> 
+
+	+ Foreach: project-list{
+		1. 	beanUser a1 = SELECT distinct IpAddress, sum(same_time_use_number) 
+					FROM license_use_info 
+					WHERE year := year and month:= month GroupBy IpAddress
+					--> IpAddress(seqNO), năm year, tháng month có số lượng license sử dụng thực thế là SUM.
+					(viet 12 cau lenh cho 12 thang) 
+					--> List<list<beanUser>{IpAddress(seqNO), năm year, tháng month, SUM}>
+					
+		2. 	List<IpAddress(seqNO)> listIP = Select IpAddress(seqNO) where project(seqNO)(IpAddress):= projectId(ProjectList)	FROM ipaddress_info;
+					--> {project(seqNO), nam , thang} chua listIP
+					
+		3.1 	Foreach:List<list<beanRegister>>{
+				Foreach:list<beanRegister>{
+					Foreach:List<list<beanUser>>{
+						Foreach:list<beanUser>{
+							if (beanRegister.getProject_id(seqNO) == project(seqNO) && listIP contain beanUser.getIpAddress(seqNO)) {
+								Bean bean = new Bean();
+								bean.set
+							}
+						}
+				}
+			}
+		}
+		
+		3.2 
+		int regisMonth1 = 0;
+		int useActualMonth1 = 0;
+		int memberPrice = 0;
+		int regularPrice = 0;
+		
+		<list<beanRegister>> listbean1 = List<list<beanRegister>>.get(0);// lay size list project -> so bean can co.
+		For(int i = 0; i < listbean1.size(); i++){ // 3 project
+			Bean beanI = new Bean();
+			for(int i=1 ; i<=12 ;i++){// 12 thang
+				proRegis1 = List<list<beanRegister>>.get(0).get(0); // thang 1 - project 1.
+				List<IpUsed1> = List<list<beanUser>>.get(0);// list Ip thang 1.
+				List<listIpPro1> = managerLicenseBusiness.getListIpAddressByProjectId() list IP thang1 thuoc project 1.
+				switch(i){
+					case:1 
+					regisMonth1 = proRegis1.regisMonth1();
+					memberPrice = proRegis1.getMemberPrice();
+					regularPrice = proRegis1.getRegularPrice();
+					for(List<IpUsed1>){
+							if(List<listIpPro1>.contain(IpUsed1)){
+								useActualMonth1 = useActualMonth1 + IpUsed1.get(i).getUsedSumPerMonth();
+							}
+					}
+					
+				}
+			}
+		}
+		
+	}
+	
+	Note:
+	 // get list project Register and Sum from license_info base year, month.
+        List<List<LicenseRegisterBean>> proRegisList = new ArrayList<List<LicenseRegisterBean>>();
+        proRegisList = managerLicenseBusiness.getLicenseRegisterInfor(listProjectId, Integer.valueOf(yearSelect));
+
+        // get List IPAddress used and Sum from license_use_info base year, month.
+        List<List<LicenseUsedBean>> ipUsedList = new ArrayList<List<LicenseUsedBean>>();
+        ipUsedList = managerLicenseBusiness.getLicenseUsedInfor(Integer.valueOf(yearSelect));
+		..
+		...
+		// get list project Register from ipaddress_info base year, month.
+                            List<IpAddressInfo> ipListOfProject4 = managerLicenseBusiness.getListIpAddressByProjectId(
+                                    proRegis.getProjectId(), Integer.valueOf(yearSelect), 4);
+                            if (!ipListOfProject4.isEmpty()) {
+                                if (!ipUsed.isEmpty()) {
+                                    for (LicenseUsedBean ipAddressInfo : ipUsed) {
+                                        if (ipListOfProject4.contains(ipAddressInfo)) {
+                                            usedActualMonth4 = usedActualMonth4.add(ipAddressInfo.getUsedSumPerMonth());
+                                        }
+                                    }
+                                } else {
+                                    usedActualMonth4 = BigDecimal.ZERO;
+                                }
+                            } else {
+                                usedActualMonth4 = BigDecimal.ZERO;
+                            }
+		--> 
+		1. vi sao ipListOfProject4.isEmpty() thi usedActualMonth4 = BigDecimal.ZERO;
+		-> Lý do: neu 1 project ma dang ky License nhung khong dk IpAddress thi cung vo nghia, 
+			vi chi khi dk IPAddress thi moi duoc tinh la có dk license de su dung.
+		
+		2. vi sao trong ham getListIpAddressByProjectId() lai phai search them ca dk nam, thang?
+			"SELECT ip.seq_no FROM isv_db.ipaddress_info as ip "
+                    + "WHERE ip.project_id=:projectId AND SUBSTRING(date_updated, 1, 4)=:year AND SUBSTRING(date_updated, 6, 2)=:month"	
+		-> Lý do: đăng ký Ip tại thời điểm năm, tháng nào thì mới tính sử dụng license(use licen) ở tháng đó.(ko hop ly)
+		-> Vì: tháng 1 có thể đăng ký được cho tháng 1,2,3 -> ko check tháng ở đây được, chỉ check năm thoai.
+		
+		3. Neu bang license_info khong dang ky license_info(trong catalog) thi ben bang license_use_info(catalog) cung khong the co du lieu,
+		do khong co cha thi ko co con. license_info(catalog) la cha cua license_use_info(catalog).
+		VD: Project 3 chi dang ky (n)license o duy nhat 1 CatalogID = 5 -> trong bang license_use_info(catalog)khong the co truong du lieu nao ma 
+		co Catalog khac 5.
+		4. mapping tuong ung cu trong license_info co 1 line thi ben license_use_info(catalog) cung co 1 line tuong ung?
+		
+		
+		
+	+ https://stackoverflow.com/questions/15512628/sql-query-with-distinct-and-sum
+
+
+
+1.2 課金合計: Bảng tổng thanh toán. = Hien thi theo Tháng.
++ Hiển thị dữ liệu theo project,năm,tháng đã được lựa chọn.
++ Project
++ 予算/Budget
++ 実績/Actual
+-> update thay doi khi combobox dc thay doi.
+Thay ten 課金金額 bang ten 課金種類.
+
+1.3: 課金詳細: Bảng chi tiet thanh toan = Hien thi theo Q&A 30.
++ 申請料: ※1 - Phí Đăng ký
++ 利用料: ※2 - Phí Sử dụng.
++ Số lượng sử dụng thực tế (Get từ DB): - ĐƯỢC LẤY TỪ same_time_use_number(license_use_info) - LẤY ĐƯỢC.
++ Hang tren: hien thi so da dang ky(nomarl: nen co gia: member_price) - LẤY ĐƯỢC.
++ Hang duoi: hien thi so da su dung thuc te- so da dang ky(plus++ nen co gia la: regular_price) - LẤY ĐƯỢC.
++ Điều chỉnh: 
+
+Q&A:
+1) Tham khảo: 利用状況仕様.xlsx , sheet 明細
+Mục trên cùng Search theo combobox tôi đang hiểu là:
++ Project: nếu user login là supporter thì mặc định sẽ hiển thị tất cả các projects, nếu user login không phải supporter thì mặc định chỉ hiển thị những project mà nó tham gia.
++ Năm tài chính: mặc định từ ngày 1 tháng 4 năm hiện tại đến hết tháng 3 năm sau thì sẽ hiển thị năm tài chính là năm hiện tại.
++ Tháng: mặc định hiển thị sẽ là tháng hiện tại.
+
+Như vậy có đúng không, mong các bạn confirm giúp ?
+
+-> KH tra loi: OK.
++ 予算/Budget: Số lượng đã đăng ký (Số lượng của các tháng trong DB license_info) x Tổng cộng của các tháng trong member price (member_price của catalog_info)	
++ 実績/Actual: dua vao (2) de tinh toan gia tri thuc te.
+
+2) Tham khảo: 利用状況仕様.xlsx , sheet 明細
+Phần hiển thị: 課金詳細 có nói nếu 利用数<申請数 
+thì ở phần EX000001, mục 従量
+sẽ hiển thị dữ liệu của: 利用数-申請数
+như vậy thì giá trị của 申請数-利用数 sẽ bị âm, và hiển thị giá trị âm như vậy là vẫn đúng chứ ?
+
+Mong các bạn confirm giúp?
+
+-> KH tra loi:
+製番						利用数<申請数		利用数>申請数		利用数=申請数	
+
+EX000001		基本		利用数			申請数			申請数	
+				従量		0				利用数-申請数		0	
+				
+EX000001(調整)	基本		申請数―利用数		0				0	
+				従量		0				0				0	
+
+基本: so luong theo tieu chuan da dang ky -> gia la member_price.
+従量: so luong |su dung > da dang ky| -> gia la regular_price.	
+
+
+3) 
+3.1 Vậy trường hợp 1 project đăng ký 2 license tại 2 Catalog khác nhau trong cùng 1 thời điểm(cùng năm, cùng tháng)
+Mà mỗi 1 Catalog sẽ có member_price và regular_price khác nhau.
+Vậy Khi đó table(6) sẽ hiển thị theo catalogId nao ? -> Hien thi het kieu cha-con.
+
+4) Ben FPT dang hieu la: chi khi co du lieu dang ky(license_info) thi moi co du lieu su dung(license_use_info)
+do do bang license_info se map 1:1 cac row tuong ung voi bang license_use_info tai cac cot catalog_id, year, month co phai ko? 
+
+5)
+- Nhan Thay: 
++ phai co IPAddressID thi moi co license_use_info
++ neu thang 8 da dang ki lincen t8,9 va ipAddress thi khi apporved ipAddress se la dc apporved thang 8
+-> du lieu Dk license t9 se thuoc ipAddress T8.
+-> Sang thang 9 dang ki lai hay chinh sua so luong License dk T9 thi phai add them ipAddress moi.(do ipAddress cu da duoc su dung)
+
+Truong hop hien tai dang la Thang 8 va User dang ky license, IPAddress cho ca thang 8,9 khi do se xuat hien truong hop
+du lieu dang ky license tai thang 9 co IpAddress dang ky o thang 8.
+Hoi: khi do trong bang license_use_info se xuat hien 2 row de mapping
+
+--> hien tai la T8 ma dk license T9 thi dang tinh ca thang 9 vao so luong dang ki.
+
+DB chuan(28/09/2017):
+license_info:
+	34	27	1	2017	0	0	0	0	0	0	1	1	0	0	0	0		2017-10-01	1	2017-10-01
+	35	27	2	2017	0	0	0	0	0	1	1	0	0	0	0	0		2017-09-28	1	2017-09-28
+	36	26	1	2017	0	0	0	0	0	1	1	0	0	0	0	0		2017-09-29	1	2017-09-29
+
+license_use_info:
+	1	90	1	2017	10	a	a	1	1	1	1	2	0
+	2	90	1	2017	11	a	a	1	1	1	1	2	1
+	3	91	2	2017	10	a	a	1	1	1	1	2	0
+	4	91	2	2017	9	a	a	1	1	1	1	2	1
+	5	92	1	2017	9	a	a	1	1	1	1	3	0
+	6	92	1	2017	10	a	a	1	1	1	1	0	1[TH license đã được đăng kí nhưng chưa sử dụng -> same_time_use_number = 0]
+
+ipaddress_info
+	90	27	10.10.10.1	10.10.10.	1	1	2017-10-01
+	91	27	10.10.10.2	10.10.10.	2	1	2017-09-28
+	92	26	10.10.10.1	10.10.10.	1	1	2017-09-29
+	
+project_info
+	26	pro-001	ThaiHX1@fsoft.com.vn	ThaiHX	000			1	a	2017-09-28	2017-09-28	pro-001				Xuan Thai Hoang
+	27	pro-002	ThaiHX1@fsoft.com.vn	ThaiHX	000			1	a	2017-09-28	2017-09-28	pro-002	2017-09-28	9	2	Xuan Thai Hoang
+	28	pro-003	ThaiHX1@fsoft.com.vn	ThaiHX	000			1	d	2017-09-28	2017-09-28	pro-003				Xuan Thai Hoang
+	29	pro-004	ThaiHX1@fsoft.com.vn	ThaiHX	000			1	a	2017-09-28	2017-09-28	pro-004				Xuan Thai Hoang
+	30	pro-005	ThaiHX1@fsoft.com.vn	ThaiHX	000			1	a	2017-09-28	2017-09-28	pro-005				Xuan Thai Hoang
+	
+catalog_info:
+	1	vendor_name1	tool_name1	future_name1	1005	2005	3	overview1	note1	1	/aaa/bbb/ccc.txt;/ddd/eee/fff.txt;	1	/xxx/yyy/zzz.txt	/aaa/bbb/$year/$month/$year$month_hoge.asplog	1	1	/aaa/bbb/$year/$month/$year$month_hoge.asplog
+	6	vendor_name1	tool_name1	future_name6	6005	12010	7	overview2	note1	3	/aaa/bbb/ccc.txt;/ddd/eee/fff.txt;	2	/xxx/yyy/zzz.txt	/aaa/bbb/$year/$month/$year$month_hoge.asplog	2	2	/aaa/bbb/$year/$month/$year$month_hoge.asplog
+	2	vendor_name2	tool_name2	future_name2	2005	4005	7	overview2	note1	3	/aaa/bbb/ccc.txt;/ddd/eee/fff.txt;	2	/xxx/yyy/zzz.txt	/aaa/bbb/$year/$month/$year$month_hoge.asplog	2	2	/aaa/bbb/$year/$month/$year$month_hoge.asplog
+	7	vendor_name2	tool_name2	future_name7	7005	14010	4	overview3	note1	2	/aaa/bbb/ccc.txt;/ddd/eee/fff.txt;	3	/xxx/yyy/zzz.txt	/aaa/bbb/$year/$month/$year$month_hoge.asplog	3	3	/aaa/bbb/$year/$month/$year$month_hoge.asplog
+	3	vendor_name3	tool_name3	future_name3	3005	6005	4	overview3	note1	2	/aaa/bbb/ccc.txt;/ddd/eee/fff.txt;	3	/xxx/yyy/zzz.txt	/aaa/bbb/$year/$month/$year$month_hoge.asplog	3	3	/aaa/bbb/$year/$month/$year$month_hoge.asplog
+	4	vendor_name4	tool_name4	future_name4	4005	8005	7	overview4	note1	1	/aaa/bbb/ccc.txt;/ddd/eee/fff.txt;	2	/xxx/yyy/zzz.txt	/aaa/bbb/$year/$month/$year$month_hoge.asplog	2	1	/aaa/bbb/$year/$month/$year$month_hoge.asplog
+	5	vendor_name5	tool_name5	future_name5	5005	10005	8	overview5	note1	1	/aaa/bbb/ccc.txt;/ddd/eee/fff.txt;	1	/xxx/yyy/zzz.txt	/aaa/bbb/$year/$month/$year$month_hoge.asplog	4	1	/aaa/bbb/$year/$month/$year$month_hoge.asplog
+
+- vai trò của vendor_name = future_name.
+và với mỗi một vendor_name sẽ có 1 future_name và có nhiều future_name.
+- Loop List<Map<>>: https://stackoverflow.com/questions/2148658/iterate-over-elements-of-list-and-map-using-jstl-cforeach-tag
+
+- format BigDecimal:
+String.format("%','.2f", licenTotalTaxExport.get(j).getMoneyBudgetPerMonth().setScale(2, RoundingMode.DOWN));
+1355 - > 1,355.00
+
+Note: Hàng trên: số lượng đã đăng ký( a1 )
+※Trường hợp Thực tế< số lượng đã đăng ký, hiển thị Thực tế  
+// -> nếu số lượng sử dụng thực tế nhỏ hơn số lượng đăng ký License thì show lên màn hình này số lượng sử dụng thực tế .
+Hàng dưới :  Số lượng đã sử dụng thực tế -  Số lượng đã đăng ký( a2 )
+// -> phán đoán:số lượng sử dụng thực tế có thể nhiều hơn số đăng ký ban đầu do có phát sinh nên những cái license đăng ký thêm sẽ bị tính giá regular_price
+mà không được tính giá member_price ?
+
+DB:
++ KH chinh sua bang catalog_info them 2 truong: ipaddress_server_id, result_server_id(Not NULL) duoc lay tu ipaddress_info(seq_no)
+NHUNG phai co catalog_info truoc thi moi dang ky duoc ipaddress_info -> Mau Thuan.(ko biet insert du lieu kyeu gi?)
+DUNG la phai lay tu server_info(seq_no)
+
+
+- http://javahonk.com/struts-2-csv-download/
+https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16	
+
+
+CSS:
+position: xxx
+Vị trí mặc định của position là vị trí của thành phần bao ngoài.
+position: relative; -> sẽ định vị trí dựa theo thành phần bao ngoài.
+position: absolute; -> sẽ định vị trí theo cửa sổ trình duyệt(neu no khong nam trong 1 thanh phan nao khac).
+Nếu thành phần bao ngoài sử dụng thuộc tính position: relative; -> thì thành phần sử dụng "position: absolute" bên trong sẽ định vị trí theo thành phần bao ngoài.
+Thuộc tính position: fixed; : Định vị trí tương đối cho thành phần theo cửa sổ trình duyệt.
+
+
+
+========================================================================================
+- Fix pharse cu. //hướng: sd switch(month) de add new or update license.
++ 3 file ko duoc commit: LicenseAction, LicenseDaoImpl, registerLicen
+- Giao dien: dong bo co gian 3 trinh duyet.
+- cat text(Add tooltip)
+- Chuyen Style sang CSS.
+
+- Confirm ve van de hien thi Budget,Actual khi no khong co du lieu trong tbl license_use_info.
+
+===
+- Tao 1 new tab 2 menu,
+#menu1(để trống)
+#menu2
++ Menu2 show all project,
++ show tất cả các trường dữ liệu trong bảng project_infor.
++ để 2 cột ngày update_dated và approval_dated ở cuối bảng.
++ với những project đã được apporve thì hiển thị tên project là màu đỏ, còn lại là màu đen.
++ tạo 1 button delete project ở cột đầu tiên trong mỗi row project, nếu user login là supporter thì enable button còn ngược lại thì disable.
++ tạo scrollbar X,Y, sắp xếp project theo những cái nào chưa được approve thì cho lên trên.
++ hiển thị 15 line,tạo phân trang 
++ tạo tìm kiềm theo tên.
++ với những tên, trường dữ liệu quá dài thì tạo tooltip và cắt chuỗi.. khi hiển thị.
+
+
+1) #25622: Màn hình aprrovelicen(các màn hình approve khác tương tự)
+[‎11/‎13/‎2017 9:49 AM] Pham Duy Tan (F500.SU7): 
+ừa, 
+[‎11/‎13/‎2017 9:51 AM] Pham Duy Tan (F500.SU7): 
+vậy khi check cả 2 cái trạng thái chờ approve, blank -> rùi nhấn appove -> hiện message project ko thể được approve
+thì cái project chờ approve cũng ko dc approve ak
+[‎11/‎13/‎2017 9:52 AM] Pham Thi Nhai (F500.SU7): 
+vâng
+[‎11/‎13/‎2017 9:52 AM] Pham Duy Tan (F500.SU7): 
+ừa
+có nghĩa là cứ trong list approve có tồn tại ít nhất 1 thằng blank thì ko cho approve hay reject gì hết
+[‎11/‎13/‎2017 9:53 AM] Pham Thi Nhai (F500.SU7): 
+vâng
+[‎11/‎13/‎2017 9:53 AM] Pham Duy Tan (F500.SU7): 
+okie em
+thế em nhờ dịch đi 
+
+
+2) Pending, neu Fix thi phai confirm KH.
+1 project đã đăng kí license và đã được approve -> đnăg kí thêm mới -> reject -> nó phải hiển thị lại trạng thái đã approved
+hiện tại thì lại để blank.
+
+Nhung file anh huong:
+LicenseAction.java : 1146
+ApprovedLicenseAction: 271
+
+
+3) Done.
+[‎11/‎16/‎2017 4:53 PM] Pham Thi Nhai (F500.SU7): 
+anh Tân ơi, cái chỗ đk license và approve đấy anh
+em và Hà nghịch nhưng mà nó đang bị đơ kiểu gì đấy anh ạ
+[‎11/‎16/‎2017 4:55 PM] Pham Thi Nhai (F500.SU7): 
+lúc đk thì mất giá trị mới đk, lại highlight cái giá trị cũ
+Th nữa là khi approve có nhiều ký tự thì ko hiển thị trạng thái đã approve anh ạ
+[‎11/‎16/‎2017 4:56 PM] Pham Thi Nhai (F500.SU7): 
+anh kiểm tra lại code giúp em nhá
+
+4) Done.  
++ check dk license neu tu !=0 -> 0 -> mau đỏ.
++ check dk license neu tu 0 -> !=0 -> mau đỏ.
+đang bị conflig.(sugget cho vao dk ngay updateDate != null o dk2)
+
+5) Done. 
++ show data cũ(detail license)
+
+
+#26156 - 23/11/2017
+- Tìm hiểu SSH
++ https://stackoverflow.com/questions/3071760/ssh-connection-with-java
+- Tìm hiểu Timer để set time execute task.
++ https://www.journaldev.com/1050/java-timer-timertask-example
++ excute bằng lệnh linux được thực hiện auto bằng code java(tạo thư mục, file, ghi file,..)
+tham khảo:
+++ FileAction.java(hpcmanager)
+++ ExecuteCommand.java
+++ fileUtil.java
++ các lệnh Linux hay dùng:
+https://medium.com/@doanhtu/c%C3%A1c-l%E1%BB%87nh-command-d%C3%A0nh-cho-ng%C6%B0%E1%BB%9Di-m%E1%BB%9Bi-d%C3%B9ng-linux-acc102323bec
+
+- Tư tưởng:
++ Tạo button export csv information of project.  
++ Chỉ acc là support mới hiển thị button này.
++ TH1: click bằng tay thì sẽ export nội dung hiển thị trên màn hình hiện tại ra file csv.
+
++ TH2: Auto export csv dữ liệu project của tháng N-1 vào thời điểm 1h AM ngày 1 Tháng N.
++ Timer:
+++ Lấy đường dẫn filPath: để export vào đây.
+++ get ServerInfor -> để lấy được acount, serverName, Pass and port -> tạo session connect được SSH.
+++ Tạo kênh ChannelSftp channel -> kết nối qua thông tin ở session -> đọc, ghi content file từ filPath.
+Đọc:
++++ Nếu chưa có file thì tạo new file.
++++ Nếu có file rùi thì ko làm rỳ cả.
+Ghi:
+
+Step b step:
++ Tạo thêm trường trong server_info: Done.
++ Tạo hàm để export CSV(Script linux)
+	- get ServerInfor -> để lấy được acount, serverName, Pass and port -> tạo session connect được SSH. 4 days
+	
+	- Create folder theo đường dẫn lấy từ DB ServerInfor. 5 days
+	// approvelicense or tham khao hpc manager<DownloadAction.createFolderUserOnHPCTemp>
+	// https://www.cyberciti.biz/faq/linux-make-directory-command/
+	
+	// Create File:
+	https://stackoverflow.com/questions/9381463/how-to-create-a-file-in-linux-from-terminal-window
+	
+	- Write file CSV to đường dẫn trên(link trong ServerInfor).10 days
+	// tham khảo HPC <FileAction.editFile() -> fileUtil.writeScriptFileOnHPC>
+	// https://stackoverflow.com/questions/17115664/can-linux-cat-command-be-used-for-writing-text-to-file
++ Gọi Hàm export vào trong cấu hình timer -> sự kiện listenner<check mỗi tháng 1 lần> -> run auto. 4days
+
++ Confirm test case: 2days.
++ Review / fix Coverity bug: 1day.
++ Fix IT Bug: 3days.
++ Release: 1day.
+
+=> Quy trình:
+04. Gọi Listenner để run export CSV
+If chưa có file thì tạo file mới với tên ISVToolLicenseManager_accounting_<YearMonth>_<年月日時分秒/năm tháng ngày giờ phút giây>.csv
+Else thì ghi đè file.
+1. get ServerInfor -> connect SSH -> lấy file Path
+2. 
+check if chua có file path thì tạo mới.
+else có rùi thì ghi đè file.
+3. Thành lập String<để export CSV>
+
+
+12/01/2017
+- Viet mail request tao test case.
+- Tim hieu quy trinh export bang tay:
+	+ mo file index.jsp
+	++ copy script:<script src="<%=request.getContextPath()%>/js/file-convert.js"></script>
+	++ va copy doan code trong <!-- ファイル変換/DB出力の動作確認用 start --> code xxx <!-- ファイル変換/DB出力の動作確認用 end -->
+	vao 1 file .jsp bat ky trong trong ung, mo len test<copy sao cho doan code xxx co the hien thi duoc len trinh duyet de user click test>
+	++ Khi click vao button fileConvert.aaa() -> no se thuc hien o trong file file-Convert.js de thuc hien tac vu convert.
+	
+
+- Viết Q&A hỏi tạo 1 file tạm
+FILE_TEMP = "/home/MePortal/ISVTemp/tempfile";//use write file with command cat(như HPC, thay HPCTemps = ISVTemp)
+
+Step-B-Step
+
+- Trong FileConvertListener.java
+viết thêm 1 line vào trong hàm: contextInitialized()
+executor.scheduleWithFixedDelay(new ManagerLicenseAction(), 0, 1, TimeUnit.HOURS);
+
+- trong file ManagerLicenseAction.java implement runable {
+	// tạo file run để auto export
+	create fun Run(){
+		//check if time now is ranger on time config (start to end export .txt)
+		
+		// call fun export file.< this func coding in this Class>
+		for(List ServerInfor){
+			// check serverInfo to get session
+			if (serverInfo != null) {
+				// SSHで接続
+				session = this.getSessionConnect(serverInfo);
+				if (session == null) {
+					errorFlag = true;
+					continue;
+				}
+            }
+			// call func boolean writeExport(){
+				// call function check forlder
+				private boolean makeDirectory(Session session, String dirPath) {
+					String command = Constants.COMMAND_MKDIR_IF_EXISTS + dirPath;
+
+					// コマンド実行
+					ExecuteCommand executeCommand = new ExecuteCommand();
+					executeCommand.executeCommand(session, command);
+					if (executeCommand.exitStatus != 0) {
+						return false;
+					}
+
+					return true;
+				}
+				
+				// call func check isExits file trong floder
+				private boolean isExistsFile(Session session, String filePath) {
+					String command = "[ -f " + filePath + " ] && " + Constants.COMMAND_ECHO_YES_NO;
+
+					// コマンド実行
+					ExecuteCommand executeCommand = new ExecuteCommand();
+					List<String> result = executeCommand.executeCommand(session, command);
+					if (result != null && result.size() > 0) {
+						if (Constants.FILE_EXISTS.equals(result.get(0))) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+				
+				// Create String to writeExport
+                String line = this.createAfterFileLine(events, used, catalogInfor, seqNo);
+				
+				// Call func write .txt by linux command -> write String line in to file in filePath.
+				 if (!this.appendFile(session, afterFilePath, line)) {
+                    logger.error("Failed to write file: " + afterFilePath);
+                    return false;
+                }
+								// function appendFile code out here this func.
+								 private boolean appendFile(Session session, String filePath, String contents) {
+									String command = "echo " + "'" + contents + "'" + " >> " + filePath;
+
+									// コマンド実行
+									ExecuteCommand executeCommand = new ExecuteCommand();
+									executeCommand.executeCommand(session, command);
+									if (executeCommand.exitStatus != 0) {
+										return false;
+									}
+									return true;
+								}
+				
+				 return true;
+			}
+				
+		}
+		
+	}
+}
+# copy nguyen fun writeScriptFileOnHPC() truyền param vào để create file.<Pending - lam theo cách KH suggest>
+
+- Tao 1 chuoi String -> ghi vao file tren server
+// Tham khao: fun AfterFileWriter.appendFile()
+
+
+12/04/2017
+// Review test-Case:
+#26156
+#26190
+
+06/12/2017
+[‎12/‎6/‎2017 4:01 PM] Pham Duy Tan (F500.SU7): 
+vậy là phải có đường dẫ cụ thể trong accounting_folder  thì mình mới tạo file và ghi nội dung vào
+ngược lại thì bỏ qua, ko làm gì 
+[‎12/‎6/‎2017 4:02 PM] Nguyen Nhat Linh (F500.SU7): 
+uh
+
+- Set test export theo cứ XXX phút, tại khoảng  giờ(Y->Y giờ)
+
+
+- 14/12/2017
+Create Interface -> call get data -> auto export.
+
+- 21/12/2017
+Cho IT-case vào thư mục relase: 04.IntegrationTestResult
+link: D:\MePortal\01.Documents\08.Deliverable\05.MePortal\20171222\MePortal_ISV_20171222
+Chỉnh tên trong file release note:
+Link: D:\MePortal\01.Documents\08.Deliverable\05.MePortal\20171222\MePortal_ISV_20171222\Meportal_ISV_リリースノート_20171222.docx
+
+- 25/12/2017
+Sending Mail:
+Chỉ cần 4 thông tin config mail là tạo hàm gửi mail được:
+Bạn có thể lấy thông tin SMTP server tại đây:
+SMTP Server : smtp.gmail.com
+SMTP Username: Tên đầy đủ Gmail (email address), ví dụ youremail@gmail.com
+SMTP Password: Mật khẩu Gmail của bạn.
+SMTP Port: 465
+TLS/SSL: Required.(SSL)
+
+Sử dụng Session check authen:
+ Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(account, password);
+            }
+        });
+//Func: public static Session getDefaultInstance(Properties props,Authenticator auth)	=> returns the default session.
+
+Link: https://www.javatpoint.com/java-mail-api-tutorial
+
+28/12/2017
+#26729
+Hiển thị default: "送信内容を入力してください/hãy input nội dung gửi tin" (trường hợp giá trị empty. Giá trị của placeholder)
+Hiển thị mail_template DB:contents của line đã được chọn tại radio button
+※ Thay thế phần %Year% thành Year của ngày đã hiển thị
+(Trường hợp đã hiển thị vào 2017/12/14 thì thay thế thành "2017")
+※ Thay thể phần %Date% thành ngày sau 1 tuần, kể từ ngày đã hiển thị
+(Trường hợp đã hiển thị vào 2017/12/14 thì thay thế thành "12/21(木)")
+※%Date+1%
+(Trường hợp đã hiển thị vào 2017/12/14 thì thay thế thành "12/22(金)")
+編集可能/có thể edit
+
+=> Pending
++ Year sẽ lấy Year hiện tại.
++ Date: bình thường sẽ lấy ngày hiện tại => Date + 1 = Ngày hiện tại + 1.
++ Date: Riêng vào ngày 14/12 thì lấy Date = Ngày hiện tại + 7; Date + 1 = Ngày hiện tại + 8.
+
+Phong Commter: nói ngày 14/12
+" lấy làm ngày ví dụ thôi ạ
+  ko phải ngày đặc biệt
+"
+=> Chot lai (29/12/2017):
++ Year: lấy year là năm hiện tại(ko phải năm tài chính)
++ Date: bình thường sẽ lấy ngày hiện tại => Date + 1 = Ngày hiện tại + 1.
+-> trường hợp vào cuối tháng 12, vd current date: 2017/12/29 -> Date = curent date + 7 = 2018/01/05; cắt chuỗi lấy %date% = 01/05 , %year% vẫn để nguyên là 2017.
+
+//Add date
+    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+    Date currentDate = new Date();
+    System.out.println(dateFormat.format(currentDate));
+ // convert date to calendar
+    Calendar c = Calendar.getInstance();
+    c.setTime(currentDate);
+
+    // manipulate date
+//    c.add(Calendar.YEAR, 1);
+//    c.add(Calendar.MONTH, 1);
+    c.add(Calendar.DATE, 7);
+//    System.out.println("%date%: "+ c);
+    System.out.println("date: " + dateFormat.format(c.getTime()));
+	
+
+02/1/2018
+Nhai gui IT-Case nho review: waiting.
+
+03/01/2018
+[‎1/‎3/‎2018 3:04 PM] Pham Thi Nhai (F500.SU7): 
+1. KO phỉa supporter thì ko hiển thị tab và command lên
+2. TH textbox blank thì anh nên có msg khi em click button gửi mail chứ nhỉ
+[‎1/‎3/‎2018 3:10 PM] Pham Thi Nhai (F500.SU7): 
+3. bảng trong DB anh chưa tạo đug ko a?
+[‎1/‎3/‎2018 3:14 PM] Pham Thi Nhai (F500.SU7): 
+4. bảng "to" cuối bị thiếu line text hiển thị số lượng
+[‎1/‎3/‎2018 3:16 PM] Pham Thi Nhai (F500.SU7): 
+5. anh có thể thu hẹp khoảng trắng còn thừa và kích thước các textbox để ko hiển thị scrollbar dọc ngay lúc đầu xem nhé
+[‎1/‎3/‎2018 3:18 PM] Pham Thi Nhai (F500.SU7): 
+6. khi zoom màn hình, màn hình hiển thị ko đẹp
+
+
+
+mail: trungnv20
+
+05/01/2018
+チケット #26156 が 開発電気)高木 美紀 によって更新されました。 
+•	ステータス を 受入 から 開発 に変更
+•	担当者 を 開発電気)高木 美紀 から FPT)Nguyen Nhat Linh に変更
+•	進捗率 を 80 から 30 に変更
+To FPT) Mr.Linh
+From FATEC) Takagi
+
+Tôi đã thay đổi: resources/configTime.properties, giống như bên dưới rồi run.
+startHoursExportCSV = 12
+endHoursExportCSV = 12
+dayExportCSV = 5
+
+Có 11 file được tạo.
+Nhờ anh fix sao cho output của file chỉ (thực hiện) 1 lần thôi nhé.
+
+Phương án fix:
+Trường hợp file, mà 1 phần tên file giống như dưới đây, đã tồn tại thì không run xử lý.
+ISVToolLicenseManager_accounting_201712_2018010512
+
+※年月日時間/năm tháng ngày giờ thì anh làm cho giống với setting của dayExportCSV, vv… nhé.
+
+Xin hết. Nhờ anh giúp đỡ.
+
+09/01/2018
+em cho cái label null trong DB ạ
+nếu chưa xong thì anh cứ gửi đi 
+tại nếu bắt bug thì nhiều lắm
+
+10/01/2018
+[‎1/‎10/‎2018 3:52 PM] Bui Thanh Phong (FGC.HN2): 
+1.「入力フィールド が空白」: trường nhập dữ liệu blank
+2.「テンプレート がない」: ko có template
+
+
+[‎1/‎11/‎2018 3:20 PM] Nguyen Nhat Linh (F500.SU7): 
+1. SendMailDaoImpl.java v
+2. sendMail.jsp >>> xóa line 22 -> 25 v
+- clear lại function setvalueCombobox() v
+- cho đống var vào sendMailAction() v
+3. SendMailAction.java
+- xóa line 119 v
+- line 142 thiếu check size() > 0 v
+- clear lại function sendMail() v
+- cho lại param ở findAndReplace() v
+4. SendMailBussinessImpl.java
+- sai line 18 
+
+[‎1/‎11/‎2018 3:05 PM] Pham Thi Nhai (F500.SU7): 
+lỗi của bên anh, anh xem lại giúp em nhá
+[‎1/‎11/‎2018 3:06 PM] Pham Thi Nhai (F500.SU7): 
+khi em chọn command 2 hoặc 3, chỗ mail "to" em cho enter  và click gửi mail thì lại ko báo lỗi thiếu mail mà có hiển thị 1 mail ạ
+
+ - Acc: meportal01 ==> 05 => meportal01@fdev.local
+ - Group: meportalgroup@fdev.local
+ - Pass: fsu11@12345
+ - Link: https://10.16.51.140/owa
+
+-> Để authen Success: -> config acc, pass trong C:\home\tomcat\portal\ISVToolLicenseManager\mailSetting.properties 
+
+// pending:
+viet ky tu lien vao mail dang co thi count so luong mail lai la count ky tu.
+
+
+17/01/2018
+
+1	khi em chọn command 2 hoặc 3, chỗ mail "to" em cho enter  và click gửi mail thì lại ko báo lỗi thiếu mail mà có hiển thị 1 mail ạ, khi ấn enter thì chương tình nhận là có ký tự ạ // Done.
+
+6	chỗ đếm số lượng mail to ko chuẩn: v
+
+8	TH có textbox blank thì khi ấn gửi mail, giữ nguyên màn hình đã input và thông báo các trường blank thì tiện hơn ạ (pending - hien He thong gui mail xong la load lai page)
+
+
+// Add style CSS using java script: 
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_setattribute1
+add Class: validateSendMail
+
+            String rplOne = this.findAndReplace(line, "\n", ";");
+            String rplTwo = this.findAndReplace(rplOne, "\r", ";");
+            String rplThree = this.findAndReplace(rplTwo, "\t", ";");
+
+Giai phap: chuyen chuoi thanh 1 mang -> for all mang -> check cac phan tu deu empty or null -> chuoi toan phan tu rong -> set content = trong luon.
+			
+			
+19/01/2018			
+Quan tâm:
+1, 問合せシステム/Inquiry system
+2. Common chung
+
+=> nhiệm vụ: search trên mạng xem những thư viện được bôi vàng trong list được lấy từ nguồn nào?
+có phải mất phí ko ? nếu mất phí thì sử dụng như vậy có an toàn ko.
+
+Nội dung:
+Khi tạo license list của OSS sử dụng của ticket mới, vì có điểm không rõ về license và入手元/nguồn nhận của 1 số OSS, nên nhờ anh confirm nhé.
+
+Đang sử dụng trên/bằng 「問合せシステム/ Inquiry system」,
++ ognl: URL nguồn phát triển, URL của ライセンス表記/License notation
++ formValidation.min.js: nếu nhìn vào http://formvalidation.io/license/ được mô tả ở tài liệu tham khảo, thì có vẻ như là商用ライセンス/Commercial license, có vấn đề gì không nhỉ?
+
+[参考資料/tài liệu tham khảo]
+SVN:/branches/task_MeStudio/Document/MeStudio/構成書/電気系CAD統合プラットフォーム構成書.xlsx [5.OSS一覧]シート
+
+
+Answer:
+> ognl: URL nguồn phát triển, URL của ライセンス表記/License notation
+-> hiện tại ở dự án đang dùng version 3.0.19 chứ k phải 3.0.6
+-> version 3.0.6 có thể down free tại: http://www.java2s.com/Code/Jar/o/Downloadognl306jar.htm
+
+> formValidation.min.js: nếu nhìn vào http://formvalidation.io/license/ được mô tả ở tài liệu tham khảo, thì có vẻ như là商用ライセンス/Commercial license, có vấn đề gì không nhỉ?
++ Đây là bản thương mại, đã được mua và dùng bình thường không có vấn đề gì.
+
+Review:
+CatalogAction:
+line 26: Xoa line // TODO: Auto-generated Javadoc
+line 95: biến listCatalogInfor chỉ sử dụng trong hàm initCatalogAction() thì khai báo trong hàm này thôi, ko cần khai báo global.
+line 96: ko check list object isEmpty() nhu nay: if (listCatalogInfor.isEmpty() || listCatalogInfor == null) {
+=> if (listCatalogInfor == null && listCatalogInfor.zise() == 0) {
+
+line 112: if (catalogInfor != null);
+sau if phải có đóng mở ngoặc để làm rỳ.
+=> if (catalogInfor != null) {
+	// Do somthing
+}
+
+line 131: if (!catalogAddBean.isEmpty() && catalogAddBean != null) {
+catalogAddBean mới thấy khai báo bằng null và chưa thấy set ở đâu nên đoạn này là ko cần thiết,
+và check catalogAddBean như này thì ko dùng isEmpty(), dùng check != null là đủ.
+
+line 134-136: chỗ IF, Try không nên xuống dòng trống như vậy. Tương tụ với line 143 và những line khác.
+line 141: Code nhin kho hieu: errorCode = !catalogBussiness.insertCatalog(catalogInfor);
+line 144: catalogMessage="catalog has been added!\n See in table."; 
+Message này nên cho vào file properties và gọi ra, không nên viết thẳng nội dung ra như này.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

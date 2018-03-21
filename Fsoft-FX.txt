@@ -1,0 +1,2040 @@
+﻿học AngularJS, node js ,spring
+Training để có thể thực hiện được công việc của dự án FX_RD_071602:
+Account Github:
+tanpd2
+tanpd2tanpd2
+fsoft-proxy/8080
+IP TanPD2 : 
+VPI: 10.16.116.81
+HL: 10.17.22.32 
+
+- Link viet tai lieu du an YAML:
+Viet vao day: http://10.16.56.17:9901/#/
+Xong coppy vao day la xong: http://10.16.56.17/ontology-workbench/specification/edit/master/specification/function/yaml/ontology-workbench-api-v0.yaml 
+
+- Link viet tai lieu document Diagram: 
+http://10.16.56.17/ontology-workbench/specification/blob/master/specification/design-document/desing-document.md
+
+- Link test Project tren may anh Hao: http://10.16.56.17:8888/
+- Link tao tai lieu design-document trong master de gui khach hang:
+http://10.16.56.17/ontology-workbench/specification/blob/master/specification/design-document/desing-document.md
+	+ cách copy anh: Ctrl A  + Ctrl C -> paste vào Paint 
+	-> save > cho vao muc image trong D:\SOURCE_GITHUB\Tailieu\specification\specification\design-document\img
+	+ mo file: desing-document.md de them truong du lieu, anh va ten de no hien thi len web quan ly tai lieu document.
+	+ Lay doan nay: 287-%E3%81%99%E3%81%B9%E3%81%A6%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%92%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E3%81%99%E3%82%8B-export-instance
+	bang cach commit cac thu o tren len branch Master -> mo trinh duyet > vao phan quan ly document > tim den doan minh vua them vào tai lieu >
+	kiem tra phan tu HTML tren browser > cho con truot vao tittle cua chuc nang > copy cai "loang ngoang" o tren ve >
+	> lai tiep tuc mo file desing-document.md de paste no vao va tiep tuc thuc hien config nhu format file.
+	> commit len > check lai tren web > ok.
+	
+
+- Link Task DA: \\10.16.34.118\fsu17\BU68\Projects\FujiXerox\R&D\RD-0117\FX_RD_011702\Workbench
+- Link database Neo4j DA: http://10.16.56.17:7474/browser/
+- Link database Blazegraph DA: http://10.16.56.17:9999/blazegraph/#namespaces  (D:\SOURCE_GITHUB\ontology-workbench\backend-server\src\test\resources)
+- Link Test: http://10.16.56.17:9000/menu
+- run database local:
++ vao: \\10.16.116.83\22.work_bench\1.SV_blazegraph OR D:\SOURCE_GITHUB\2.Blaze_SV => run BlazeGraph.
++ vao: Menu>All Programs>Neo4j Community Edition> run Neo4j.
+- Front-end: Dùng Webstorm.
+- Back-end: Dùng Eclipse.
+- Tool comapare code giua 1 thu muc chua code lay tu tren Github va 1 code Dev phat trien: Beyond Compare 3.
+- Trang chuyen du lieu sang dang Json: http://jsonlint.com/
+- DA:ontology-workbench: làm về nhận dạng ngôn ngữ tiếng Nhật.
+- Truoc khi Import Back-end thi vao thu muc \ontology-workbench\backend-server co file : build.gradle
+	-> su dung cau lenh(bat cmd Git): $ gradle eclipse -> xong  -> vao eclipse import back-end.(lam ntn de inport cho nhanh.)
+- Cach su dung Git: clone, get source tren server ve may tinh:
+	1. Tao 1 thu much chua du an
+	-> Git bass here
+	-> go lenh: git clone -> pastelink: ssh://git@10.16.56.17:2020/ontology-workbench/ontology-workbench.git
+	  	(git clone ssh://git@10.16.56.17:2020/ontology-workbench/ontology-workbench.git)
+
+	-> go lenh: ls // de show thu muc chua source code.
+	-> go lenh: cd ontology-workbench // enter de goi thu muc chua source code.
+	-> go lenh: git checkout fpt // thu muc fpt-temp tren server chua cac file code ma doi Dev dang phat trien.
+	-> OK.
+	-> vao Eclipse -> Import > Gradle Project > back-end > ok.
+
+	2. Cach thay doi branh fpt-temp sang fpt
+	-> vao thu muc chua source
+	-> git bass here
+	-> go lenh: git checkout fpt
+	-> ok. refresh eclipse -> da sang branch fpt.
+	-> nguoc lai, lam tuong tu.
+
+	3. Cach lay source moi ve:
+	-> Du an -> chuot phai -> team -> fetch from upstream.
+Hoac:	-> Du an -> chuot phai -> team -> Pull.
+Hoac:   -> folder source server -> git Bash here -> git pull
+		-> CompareSource -> chon source  -> copy to Right -> Save lai (strl + S)-> refresh lai Elipse -> OK.
+
+Hoac:	>thu muc muon lay source ve>git bass here>
+	>>git config --global alias.up "! git remote update -p" -> update source ve.
+	>>git config --global alias.me "! git merge --f-only @{u}"  -> sau khi update xong thi phai merge ve moi co du lieu./ neu bi conflig se rollback luon.
+
+	4. Commit source:
+	-> Du an -> chuot phai -> team -> Commit.
+	5. Comit vao 1 Branch tren server.
+	-> folder du an -> git HUI here -> push.
+
+	6. Refresh lai DA:
+	-> Git bass here -> gradle eclipse>enter
+	-> Project tren eclipse -> chuot phai 
+		-> Gradle>Refresh all 
+		-> Gradle>Dependencies.<het loi checkstyle>
+	7. Bat localhost:8888
+	-> D:\SOURCE_GITHUB\frontend-server -> bat file server.batch.
+	-> D:\SOURCE_GITHUB\frontend-server\app\common\services\common -> doi cong: 'http://10.16.116.81:8081'
+	-> D:\SOURCE_GITHUB\frontend-server\config -> doi cong: "hostname": "10.16.116.81",
+	-> D:\back-end\src\main\resource\META-INF\spring\config.properties: user/pass Mysql: root/root.
+	8. Run du an:
+	-> Run Application trong java.
+	-> Chay localhost bang server.batch <buoc 7> để bật localhost:8888.
+
+- Cach su dung CompareSource back-end:
++ D:\SOURCE_GITHUB\fpt-temp\ontology-workbench\backend-server : source tren Server(link ben trai).
++ D:\SOURCE_GITHUB\ontology-workbench\backend-server : Source tren local minh code(link ben phai).
+-> Neu can thay doi source ben local ma muon push len server -> nhan mui ten vang o phan source ben local(phai) -> sang trai -> ok.
+-> Commit thi vao folder chua link source tren server -> Git GUI here -> stage changed
+	-> chon cac file da thay doi -> viet noi dung commit -> commit la ok. 
+	
+	
+
+Node DA:
+-> Frontend:
+	+ send request to Controller.
+-> Controller:
+	+ get data from Frontend -> tranfer to Service.
+-> Service(Bean):
+	+ Check data.
+	+ xl Bussiness.(get/set, Select/update/insert/Delete/)
+	+ goi cac ham ben Respository(Dao) de lay du lieu va thuc hien viec tinh toan trong ham.
+-> Respository(Dao): Repository về cơ bản là một lớp nằm giữa business login và data source.
+	+ http://fsd14.com/post/43-cac-loi-ich-khi-su-dung-repositories.
+	+ Data Mapper, Query Object.
+	+ Thuc hien tao tac voi database(get/set, Select)
+-> Database:
+	+ Luu tru du lieu.
+
+------
+Sau khi config connected to database successfully
+-> Service/sql
+	+ DocumentEntity: Dung Anotation Mapping with table in database.
+	+ ProjectEntity(Service): Create, update, delete(by projectId or DocumentId), showlist, getDocumentbyId, findDocumentbyProject.
+-> service/Neo4j: Thong qua responsitory de thao tac voi database.
+	+ Entity:
+		1. Lay ProjectJd tu Service/sql.
+		2. all cac thuoc tinh co: id, docId, ProjectId.
+	+ Document, instance, sentence, token.
+
+-> respository(DAO): thao tac truc tiep voi DATABASE.
+	+ Tìm kiếm, save,.. thi tao 1 ham extends Class GraphRepository da duoc java cung cap, va su dung cau lenh Neo4j: de ket noi voi database
+	do đó ta chỉ cần gọi nó ra là dc:  List<DocumentNeo4jEntity> findByProjectId(String projectId);
+hoặc có thể tự tạo truy vấn cho mình.
+	thong qua Neo4jEntity. @Query("MATCH (n:`ontology_tokens`) RETURN n")
+xong extend chúng bằng cách: 
+	+ => insert thi extends ham nao ?
+		 
+Task process: Tan lam Document, Sentances. / anh Hao lam Instance va Token.
+- De clone 1 Document thi can Clone 4 thu trong 3 data: SQL(done) , Neo4j, BlazeGraph.
+	Code trong ham ProjectService.java
+	+ Clone Project.
+		1. Tao 1 ham: cloneProjectEntity(ProjectEntity project)
+		2. Khoi tao doi tuong moi: ProjectEntity newProjectEntity = new ProjectEntity();
+		3. Set các thuoc tinh cua ProjectEntity: newProjectEntity.setComment(project.getComment());
+		4. Rieng Ten se cộng thêm phần constant: _copy ở đuôi xong mới set.
+			String newProjectName = getProjectNameDuplicate (project.getName() + Constants.PROJECT_DUPLICATE);
+			newProjectEntity.setName(newProjectName);
+		5. Return newProjectEntity; // xong hàm cloneProjectEntity.
+
+	+ Clone Document.
+		1. Tao 1 ham: cloneDocumentEntity(DocumentEntity document, String newProjectId)
+		2. Khoi tao doi tuong moi: DocumentEntity newDocument = new DocumentEntity();
+		3. Set các thuoc tinh cua DocumentEntity: newDocument.setId(document.getId());
+		4. Rieng Ten newDocument.setProjectId(newProjectId);
+		5. Return newDocument; // xong hàm cloneDocumentEntity.
+	+ Clone Neo4j:
+		1.Document.
+		2.Sentence.
+		3.Instance.
+		4.Token.
+	Muc do to: Document>Sentence>Token>Instance.
+	=> xoa theo thu tu: instance -> token -> Sentence -> Document.
+	=> Insert: theo chieu nguoc lai.
+	+ CLone Ontology.
+
+
+b1: sql/ProjectService chứa  /* Duplicate Neo4j*/ TODO.
+b2: sql/ProjectService chứa  /* Create Duplicate DocumentNeo4j */ TODO.
+b3: sql/DocumentService chứa /* createDocumentNeo4j */ TODO.
+
+=> Neo4j:
+Clone Sentance:
+//clone SentenceNeo4j TPD
+	public void cloneSentences(String projectId, String newProjectId) {
+		// lay sentence tu Project cu.
+		List<SentenceNeo4jEntity> sentenceNeo4jEntities = this.sentenceRepository.findByProjectId(projectId);
+		// Check null or empty.
+		if (sentenceNeo4jEntities != null && !sentenceNeo4jEntities.isEmpty()) {
+			for (SentenceNeo4jEntity sentence : sentenceNeo4jEntities) {
+				// set null de khi luu vao database Id no se tu dong tang.
+				sentence.setId(null);
+				// set tat ca gia tri sentence tim duoc vao project moi.
+				sentence.setProjectId(newProjectId);
+			}
+			// do sentence la con cua sentenceNeo4jEntities nen khi set sentence roi thi luu thang cha sentenceNeo4jEntities
+			// thi cung se luu cac thuoc tinh cua thang con luon (LT HDT)
+			this.sentenceRepository.save(sentenceNeo4jEntities);
+		}
+	}
+
+@Test:(xem du lieu co hien thi dung k - ko coverage)
+
+b1: tao method Test.
+ @Test
+  public void updateSentence() throws Neo4jQueryException {
+	 this.sentenceService.cloneSentences("1cdd3cb8-3147-42aa-9b4d-943513752663","1cdd3cb8-3147-42aa-9b4d-943513752664");
+  }
+b2: vao Neo4j phan Sentence xem no dang co 1 node(or may note)
+b3: Run file Unitest chua method Test
+b4: check ket qua, vao Neo4j phan Sentence xem no dang co may node.
+b5: Thay no Duplicate(gap doi) Node la ok.
+
+trong do: 
++ 1cdd3cb8-3147-42aa-9b4d-943513752663 la projectId dang hien thi tren Sentance.
++ 1cdd3cb8-3147-42aa-9b4d-943513752664 tu tao them 1 projectId moi de test.
+
+@Test Case:(Coverage)
+test: DuplicateDocument.
+@Test
+	public void duplicateDocument001() throws Exception {
+		String projectId = document.getProjectId();
+		String newProjectId = document.getProjectId();
+		
+		// set du lieu Tim kiem peojectId la du lieu cua Mokito: Mockito.anyString().
+		// do ham findByProjectId nay khong phai type: Void nen co the viet nhu nay.
+		// Neu ham nay tra ve kieu voi thi phai viet dang:
+		Mockito.when(documentRepository.findByProjectId(Mockito.anyString())).thenReturn(new ArrayList<DocumentNeo4jEntity>());
+		// goi ham can test.
+		documentService.duplicateDocument(projectId, newProjectId);
+		// verify xac nhan ham findByProjectId duoc goi may lan. / bat buoc phai goi cai nay de check xem no co goi dung k.
+		Mockito.verify(documentRepository, Mockito.times(1)).findByProjectId(Mockito.anyString());
+	}
+
+	@Test
+	public void duplicateDocument002() throws Exception {
+		String projectId = document.getProjectId();
+		String newProjectId = document.getProjectId();
+		List<DocumentNeo4jEntity> listDocuments = new ArrayList<DocumentNeo4jEntity>();
+		listDocuments.add(document);
+
+		Mockito.when(documentRepository.findByProjectId(Mockito.anyString()))
+				.thenReturn(listDocuments);
+		documentService.duplicateDocument(projectId, newProjectId);
+		Mockito.verify(documentRepository, Mockito.times(1)).findByProjectId(
+				Mockito.anyString());
+	}
+
+
+1. Tìm hiểu và sử dụng thành thạo AngularJs
+- AngularJS là một framework ứng dụng web mã nguồn mở,hiên bản mới nhất của nó hiện tại là 1.3.14.
+- AngularJS là một thư viện JavaScript mạnh mẽ. Nó đươc sử dụng trong các dự án Ứng dụng trang đơn – Single Page Application (SPA).
+- Hoạt động cập nhật dữ liệu trở nên dễ dàng hơn dưới sự trợ giúp của khái niệm Data-Binding.
+- Hai tính năng cốt lõi: Data binding và Dependency injection của AngularJS loại bỏ phần lớn code mà bạn thường phải viết.
+	+ Data-binding: Nó tự động đồng bộ hóa dữ liệu giữa thành phần model và view.
+	+ Dependency Injection: AngularJS có sẵn một hệ thống con dependency injection để giúp các lập trình viên tạo ra các ứng dụng dễ phát triển, dễ hiểu và kiểm tra.
+	+ Scope: Là những đối tượng hướng đến model, nó hoạt động như là cầu nối giữa controller và view.
+- AngularJS tự động xử lý mã JavaScript để phù hợp với mỗi trình duyệt.
+- Với AngularJS, view là thành phần trong trang HTML thuần, trong khi controller được viết bởi JavaScript với quá trình xử lý nghiệp vụ.
+- Nhược điểm:
+	+ Không an toàn : Là một JavaScript framework, ứng dụng được viết bởi AngularJS không an toàn. Phải có các tính năng bảo mật và xác thực phía server sẽ giúp ứng dụng trở nên an toàn hơn.
+	+ Nếu người sử dụng ứng dụng của bạn vô hiệu hóa JavaScript thì họ chỉ nhìn được trang cơ bản, không thấy gì thêm.
+- AngularJS framework có thể được chia thành ba phần chính sau:
+	+ ng-app: directive này định nghĩa và liên kết một ứng dụng AngularJS tới HTML.
+	+ ng-model: directive này gắn kết giá trị của dữ liệu ứng dụng AngularJS đến các điều khiển đầu vào HTML.
+	+ ng-bind: directive này gắn kết dữ liệu ứng dụng AngularJS đến các thẻ HTML.
+- AngularJS thường dùng để phát triển frontend (giao diện khách hàng) thông qua các API để gọi data, sử dụng mô hình MVC rất mạnh mẽ
+- Cài đặt:
+	+ Down thư viện AngularJs.min về máy tính và lấy url này chèn vào <Scrip> trong file HTML.
+	+ Hoặc sử dụng link trực tiếp từ trên mạng.
+- ng-model="name" trung name voi <span ng-bind="ten">
+- Đặc điểm các thuộc tính có tiền tố -ng:
+	+ ng-app - Directive để bắt đầu một ứng dụng AngularJS.
+	+ ng-init - Directive để khởi tạo dữ liệu ban đầu cho ứng dụng, dữ liệu có thể là biến đơn hoặc Object, Mảng,.. chứa các biến đơn trong đó.
+	+ ng-model - Directive định nghĩa model như là một biến có thể sử dụng trong AngularJS.
+	+ ng-repeat - Directive lặp lại các phần tử HTML cho mỗi item trong một tập hợp.
+- Connect Data.
+	+ AngularJS cung cấp điều khiển $http mà làm như là service để đọc dữ liệu từ server.
+	+ Server có thể tạo các lời gọi tới cơ sở dữ liệu để nhận các bản ghi.
+	+ AngularJS cần dữ liệu dưới định dạng JSON. Khi dữ liệu sẵn sàng, $http có thể được sử dụng để nhận dữ liệu từ server.
+- AngularJS hỗ trợ các khái niệm "Seperation of Concerns - Chia để trị" sử dụng cấu trúc service.
+- Service là các hàm JavaScript và có nhiệm vụ trên những task nhất định. Nó làm cho chúng thành những thực thể riêng rẽ dễ dàng trong việc bảo trì và kiểm thử.
+- AngularJS cung cấp rất nhiều những service được định nghĩa cho trước: $http,$scope,$route,$window,$location…Mỗi một service có những nhiệm vụ nhất định.
+	+  $http được sử dụng để tạo ra các ajax request lên server để lấy dữ liệu về.
+	+ $route được sử dụng để định nghĩa thông tin routing.
+- HTML DOM (Document Object Model): là những directive  ng-disabled, ng-show, ng-hide, ng-click. 
+	<input type="checkbox" ng-model="vohieuhoakichhoatnut">Vo hieu hoa nut
+	<button ng-disabled="vohieuhoakichhoatnut">Nhan vao day!</button>
+- DOM: là 1 cơ chế để javaScript tương tác được với HTML thông qua các DOM nằm trong các tg của HTML, như onClick(), Hover(),..
+Trong Angularjs thi nó là những chỉ thi:ng-disabled, ng-show, ng-hide, ng-click nằm trong input elements, select elements, button elements, textarea elements.
+
+Tóm tăt:
+- AngularJS Expressions: {{ expression }} 
+// hiển thị dữ liệu , thay đổi thuộc tính CSS và thực hiện được phép toán trong đó.
+<div ng-app="" ng-init="myCol='lightblue'">
+	<input style="background-color:{{myCol}}" ng-model="myCol" value="{{myCol}}">
+</div>
+
+- AngularJS Modules: var app = angular.module("myApp", []);
+	+ Định nghĩa 1 application, chứa các controllers.
+	+ Adding a Controller: app.controller("myCtrl", function($scope) { // TODO somthing });
+	+ Adding a Directive: app.directive("w3TestDirective", function() {
+		return { template : "I was made in a directive constructor!" 
+				};
+	});
+	+ Co the tach code Module, Controller thanh cac files khac nhau, sau do include vao trong PageHome. <script src="myApp.js"></script>
+
+- AngularJS Directives: thuộc tính ng-
+	+ ng-app: tên bắt đầu 1 Application.
+	+ ng-init: khởi tạo giá trị ban đầu cho app,dữ liệu có thể là biến đơn hoặc Object, Mảng,.. chứa các biến đơn trong đó.
+	+ ng-model: bind dữ liệu của các tag HTML<input, select, textarea,..> vào chương trình.
+	+ Tự tạo thẻ tag như HTML, Element name(E), Attribute(A), Class(C), Comment(M) để sử dụng:
+VD: tạo thẻ tag.
+	<body ng-app="myApp">
+		<w5testdirectivew></w5testdirectivew>
+	</body>
+	<script>
+		var app = angular.module("myApp", []);
+		app.directive("w5testdirectivew", function() {
+    			return {
+        			template : "<h1>Made by a directive!</h1>"
+   			};
+		});
+	</script>
+	+ Restrictions(hạn chế): vì giá trị mặc định của Directives là EA nên cả 2 name Element(E), Attribute(A) đều được gọi, 
+	nhung sẽ chỉ 1 cái được gọi nếu name của Element(E) và Attribute(A) trùng nhau.
+
+===> HOI ?.
+
+- AngularJS ng-model Directive: ng-model: bind dữ liệu của các tag HTML<input, select, textarea,..> vào chương trình.
+	<div ng-app="myApp" ng-controller="myCtrl">
+   	 Name: <input ng-model="name">
+   	 <h1>You entered: {{name}}</h1>
+	</div>
+	+ nếu thay đổi giá trị truong trường input thì giá trị bind cũng được thay đổi.
+	+ cho phép validation giá trị input trong form.
+	+ Application Status: (invalid, dirty, touched, error)
+		1. invalid: du lieu khong hop le.
+		2. dirty: du lieu da duoc thay doi.
+		3. touched: chua focus chuot vao input field.
+		4. dien du lieu sai.
+
+- AngularJS Data Binding: co 2 dang bind du lieu.
+	+ dung Expression {{}}. // dat <p>{{Expression }}</p> o giua 2 the mo va dong.
+	+ dung ng-bind . dat ng-bind vao trong the mo. <p ng-bind="person.lastName"></p>.
+
+- AngularJS Controllers: là một Object của javascript điều khiển dữ liệu của chương trình.
+
+- AngularJS Scope: bind du lieu giua HTML(View) va javascript(controller).
+	+ app.controller('myCtrl', function($scope): // neu dung app.controller thi dung $scope.
+	+ app.run(function($rootScope): // neu khong dung app.controller thi dung $rootScope.
+
+- AngularJS Filters: format du lieu kieu curency(number:tiền), date, filter, json, limitTo, lowercase, number, orderBy, uppercase.
+	<div ng-app="myApp" ng-controller="personCtrl">
+		<p>The name is {{ lastName | uppercase }}</p>
+
+		<ul>
+	 	  <li ng-repeat="x in names | orderBy:'country'">
+   		 	{{ x.name + ', ' + x.country }}
+  	 	  </li>
+		</ul>
+	</div>
+
+- AngularJS Services: là 1 function, Object,.. hoạt động để giám sát, thay đổi hoạt động của chương trình, giống như Object trong DOM HTML.
+	+ $http Service: tạo 1 request tới server để lấy dữ liệu trả về.
+	+ $timeout Service: thời gian chờ để làm một việc.
+
+- AngularJS AJAX: đọc, lấy dữ liệu từ server.(lấy dữ liệu từ một page web view khác)
+	+ cac methods dc dung: .delete(), .get(), .head(), .jsonp(), .patch(), .post(), .put().
+	+ cac Properties dc dung: 
+		1.config: generate request.
+		2.data: lay du lieu tu server.
+		3.headers:lay thong tin headers.
+		4.status: lay HTTP status kieu Number.
+		5.statusText: lay HTTP status kieu String.
+	+ $http is an XMLHttpRequest object for requesting external data.
+	+ $http.get() reads JSON data from page http://www.w3schools.com/angular/customers.php.
+
+- AngularJS Tables: The ng-repeat directive is perfect for displaying tables.
+	+ Displaying Data in a Table:
+<div ng-app="myApp" ng-controller="customersCtrl"> 
+<table>
+  <tr ng-repeat="x in names">
+    <td>{{ x.Name }}</td>
+    <td>{{ x.Country }}</td>
+  </tr>
+</table>
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("http://www.w3schools.com/angular/customers.php") // file JSON definded data.
+    .then(function (response) {$scope.names = response.data.records;});
+});
+</script>
+	+ Displaying with CSS Style.
+	+ khai bao table,th,td cho vào trong <style></style> xong viet properties CSS co các thẻ table này như bt.
+	+ Display with orderBy Filter: su dung |.
+		<tr ng-repeat="x in names | orderBy : 'Country'">
+
+- AngularJS Select Boxes:AngularJS lets you create dropdown lists based on items in an array, or an object.
+	+ Creating a Select Box Using ng-options: should use the ng-options directive.
+		<select ng-model="selectedName" ng-options="x for x in names"></select>
+	+ ng-options vs ng-repeat: can also use the ng-repeat directive to make the same dropdown list.
+		1. ng-options:cho nhieu thong tin cua Object dc hon hon, application se linh hoat hon. <uu tien dung>
+		2. ng-repeat: chi cho dung gia tri cua item duoc chon.
+Using ng-options:
+<select ng-model="selectedCar" ng-options="x.model for x in cars"></select>
+
+<h1>You selected: {{selectedCar.model}}</h1>
+<p>Its color is: {{selectedCar.color}}</p>
+
+- AngularJS SQL: AngularJS is perfect for displaying data from a Database. Just make sure the data is in JSON format.
+	+ Dung $http de get 1 file .PHP(hoac file bat ky nao do) da lien ket toi SQL database  va co kieu du lieu JSON.
+
+- AngularJS HTML DOM: AngularJS has directives for binding application data to the attributes of HTML DOM elements.
+	+ ng-disabled, ng-show, ng-hide, ng-click nằm trong input elements, select elements, button elements, textarea elements.
+
+- AngularJS Events: AngularJS has its own HTML events directives.
+	+ AngularJS Events:
+		ng-blur
+		ng-change
+		ng-click
+		ng-copy
+		ng-cut
+		ng-dblclick
+		ng-focus
+		ng-keydown
+		ng-keypress
+		ng-keyup
+		ng-mousedown
+		ng-mouseenter
+		ng-mouseleave
+		ng-mousemove
+		ng-mouseover
+		ng-mouseup
+		ng-paste
+	+ Mouse Events:
+		ng-mouseenter
+		ng-mouseover
+		ng-mousemove
+		ng-mouseleave
+	+ The ng-click Directive:
+
+- AngularJS Forms: Forms in AngularJS provides data-binding and validation of input controls.
+	+ Input Controls:
+		1.input elements
+		2.select elements
+		3.button elements
+		4.textarea elements
+	+ Data-Binding:
+- AngularJS Form Validation: AngularJS can validate input data.
+
+- AngularJS API: API stands for Application Programming Interface.
+	+ AngularJS Global API: là các hàm làm công việc chung như
+		1.Comparing objects.
+		2.Iterating objects.
+		3.Converting data.
+	+ Mot so ham cu the:
+		1.angular.lowercase()
+		2.angular.uppercase()
+		3.angular.isString() // true,false
+		4.angular.isNumber() // true,false
+
+- AngularJS and W3.CSS: ho tro tao giao dien cho AgularJs.
+
+- AngularJS Includes: include HTML from an external file.
+	<body ng-app="">
+		<div ng-include="'myFile.htm'"></div>
+	</body>
+
+- AngularJS Animations: Tao hieu ung cho website, như ẩn hiện dữ liệu trong Div,..
+
+- AngularJS Routing: The ngRoute module helps your application to become a Single Page Application.
+	+ Dieu huong chuyen cac trang khac nhau nhung Application van la trang don nhu ban dau, chi thay doi noi dung 1 phan trong trang.
+	+ co 3 cach khai bao:
+		1.<div ng-view></div>
+		2.<ng-view></ng-view>
+		3.<div class="ng-view"></div>
+
+- AngularJS Application: It is time to create a real AngularJS Application.
+
+Cac vi du:
+
+- có 2 cách lấy dữ liệu ra:
+	+ dùng Expression <p>{{Expression}}</p>
+	+ dung ng-bind <p ng-bind="nameOfModelInput"></p>
+
+- có 2 cách tạo dữ liệu:
+	+ dùng ng-init="nam1=value1, nam2=value2"
+	+ dùng controller: 
+<div ng-app="myapp" ng-controller="control1">
+   <h3>du lieu cua ban la: {{dulieu1}}</h3>
+   <h3>du lieu cua ban la: {{Expression1[2]}}</h3>
+   <h3>du lieu cua ban la: {{Expression2.dulieu}}</h3>
+   <h3>du lieu cua ban la: {{gopbien()}}</h3>
+</div>
+
+<script>
+ var app = angular.module('myapp', []);
+     app.controller('control1', function($scope){
+  <!-- 1-->
+     $scope.dulieu1 = 'aaaaaaaaa';
+  <!-- 2-->
+     $scope.Expression1 = ["Email","Email1","Email2","Email3"];
+  <!-- 3-->
+     $scope.Expression2 = {dulieu:"dl 1", dulieu2:{a:"a", b:"b"}};
+  <!-- 4-->
+     $scope.gopbien = function(){
+      return $scope.dulieu1 + "-" + $scope.Expression1[2] + "-" + $scope.Expression2.dulieu2.a;
+}
+});
+</script>
+
+</body>
+
+- Có nhiều kiểu nhập INput vd như : 
+<input type="text" ng-model="name"> // nhap dc ca so va number(text).
+<input type="number" ng-model="quantity"> // chi nhap dc dinh dang so.
+<input type="email"  ng-model="text" name="myAddress">
+
+=> show Error nếu điền ko đúng định dạng email: <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+<form ng-app="" name="myForm">
+    Email:
+    <input type="email" name="myAddress" ng-model="text">
+    <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+</form>
+=> đưa ra True,False nếu viết như sau: <span>{{myForm.myAddress.$error.email}}</span>
+
+=> Đổi màu nền CSS: giả sử ta cho trường Input la required thì ko nhập sẽ là invalid.
+<style>
+input.ng-invalid {
+    background-color: lightblue;
+}
+</style>
+Va phai cho truong input nay vao trong form:
+<form ng-app="" name="myForm">
+    Your name: <input name="myName" ng-model="myText" required>
+</form>
+
+
+- AngularJS Directives: co 3 loai chinh: ng-model, ng-repeat, make Directives by Users. dùng để điều hướng Show dữ liệu ra màn hình.
+	+ ng-model: thuong dung nhat de lay ve 1 gia tri {{expression}}.
+	+ ng-repeat: Loop an Array or a Object(Table).
+	+ make Directives by Users: Thường sử dụng để đưa ra tiêu đề với 1 gới hạn restrictions là: E, A, C, M(comment)
+
+<body ng-app="myApp">
+<!-- directive: w3-test-directive -->
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+    return {
+        restrict : "M",
+        replace : true,
+        template : "<h1>Made by a directive!</h1>"
+    };
+});
+</script>
+</body>
+
+- Neu cung khoi tao gia tri voi cung name thi no se goi ng-init, controller ko dc goi.
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.name = "John Doe"; // cái này chính là contrustor để liên kết với data o <input> tag.
+});
+</script>
+
+<div ng-app="myApp" ng-controller="myCtrl" ng-init="name='marken'">
+Name: <input ng-model="name"><br>
+YourType: {{name}}
+</div>
+==> output: marken chứ ko phải John Doe.
+
++ configNavigation: lay du lieu tu common:
+// file common: 
+ shortCommentLength: 50,
+
+ // file project-list.js
+angular.module('myApp.project-list', ['ui.router', 'ui.bootstrap'])
+    .controller('ProjectListController',
+    function ($scope, $stateParams, $state, $translate, configNavigation, LogService, ProjectService, PopupService) {
+
+var maxLengthComment=configNavigation.shortCommentLength; // = 50
+
+CSS:
+ + max-width: 500px !important; // important: la uu tien thuoc tinh nay.
+ + word-wrap: break-word; // tao 1 wrap(banner) cho tooltip.
+ 
+// Mapping giua file .properties voi code java:
+--.properties:
+document.allow.file.extensions=xml,txt
+
+--Java:
+ @Value("${document.allow.file.extensions}")
+  private String documentAllowFileExtensions;
+  
+=> documentAllowFileExtensions = xml or, txt.
+
+
+2. Tìm hiểu NodeJs để sử dụng trong Front_end của dự án:
+- NodeJS là một nền tảng Server side được xây dựng dựa trên Javascript Engine (V8 Engine)
+- Node.js là một nền tảng dựa vào Chrome Javascript runtime để xây dựng các ứng dụng nhanh, có độ lớn.
+- Node.js sử dụng các phần phát sinh các sự kiện (event-driven), mô hình non-blocking I/O để tạo ra các ứng dụng nhẹ và hiệu quả cho các ứng dụng về dữ liệu thời gian thực chạy trên các thiết bị phân tán.
+- Ưu điểm:
+	+ Không đồng bộ và Phát sinh sự kiện (Event Driven): Tất các các APIs của thư viện Node.js đều không đồng bộ, nghĩa là không blocking (khóa)
+	+ Chạy rất nhanh: Dựa trên V8 Javascript Engine của Google Chrome, thư viện Node.js rất nhanh trong các quá trình thực hiện code.
+	+ Các tiến trình đơn giản nhưng hiệu năng cao: Node.js sử dụng một mô hình luồng đơn (single thread) với các sự kiện lặp.
+	+ Không đệm: Ứng dụng Node.js không lưu trữ các dữ liệu buffer.
+	+ Có giấy phép: Node.js được phát hành dựa vào MIT License.
+- Cài đặt:
+	+ Phải có 2 phần mềm trên máy tính của bạn. Đó là: 1)Text Editor (ví dụ : Nodepad++); 2) bộ cài binary Nodejs.
+	+ Download Node.js , giải nén và cài đặt nó. //C:\Program Files\nodejs\
+- Node.js sử dụng kiến trúc Module để đơn giản hóa việc tạo ra các ứng dụng phức tạp. 
+	+ Mỗi module chứa một tập các hàm chức năng có liên quan đến một "đối tượng" của Module. Ví dụ, http là Module chứa các hàm cụ thể liên quan đến thiết lập HTTP.
+
+3. Tìm hiểu về WebNN (Web ngữ nghĩa) và ngôn ngữ truy vấn SPARQL.
+
+4. Tìm hiểu về các loại Database sau:  BlazeGraph DB (RDFProperty), Neo4j DB, Mysql DB
+Tổng quan: 
+- Database Mysql chứa 2 table: Project, Document.
+	+ table Document get dữ liệu từ Project.
+- Database BlazeGraph DB(Big data): chứa dữ liệu dạng đồ thị Tree, gồm 2 thuộc tính của nó là Class, Properties.
+	+ Tree: lấy dữ liệu từ table Project của Mysql.
+	+ Class:
+	+ Properties:are simple name/value pairs(cặp)
+		name:'Yamada'
+		frome:'NhatBan'
+
+- Neo4j(Big data): có 4 table DocumentNeo4jEntity, Instence, Sentence, Token.
+	+ trên web http://10.16.56.17:7474/browser/ Chỉ là viết câu lệnh để truy vấn dữ liệu.
+	+ Delete cac relationship: MATCH (n)-[r]-() DELETE r
+	+ Xong moi xoa dc cac Node: MATCH (n:TokenNeo4jEntity) DELETE n
+- Delete all: 
+	MATCH (n) OPTIONAL MATCH (n)-[r]-() WITH n,r LIMIT 50000 DELETE n,r RETURN count(n) as deletedNodesCount 
+
+
+Mot data Project thi co 2 phan:
+1.Ontology(Blazegraph):
+	+ Class:
+	+ properties:
+2.Document(Neo4j):
+	+ DocumentNeo4jEntity: chỉ chứa Id của Document trong mySQL.
+	+ Sentence: Thao tác với dữ liệu thông qua/ từ DocumentNeo4jEntity.
+	+ Token: Thao tác với dữ liệu thông qua/ từ DocumentNeo4jEntity.
+
+=> Trong 1 database Mysql thi co nhieu Doccument, 1 Document thi co chua Instence, Sentence, Token.
+=> get du lieu thong qua ProjectId, DocumentId.
+
+
+	+ A Graph Database: Neo4j stores data in a Graph, with records called Nodes.
+	+ Labels:Associate a set of nodes.
+	+ More Nodes: Schema-free, nodes can have a mix of common and unique properties.
+	+ Consider(khảo sát) Relationships: Connect nodes in the graph.
+		1.The real power of Neo4j is in connected data.
+	+ Relationship properties: Store information shared by two nodes.
+	+ Neo4j's Cypher language is purpose(mục đích) built for working with graph data.
+		1.uses patterns to describe graph data.
+		2.familiar SQL-like clauses.
+		3.declarative, describing what to find, not how to find it.
+	+ CREATE: Create a node.Let's use Cypher to generate a small social graph.
+		Câu lệnh: CREATE (ee:Person { 
+						name: "Emil",
+						from: "Sweden", 
+						klout: 99
+					 }
+				)
+	trong đó: CREATE clause to create data.
+		  () parenthesis(ngoặc) to indicate(để chỉ) a node.
+		  ee:Person a variable 'ee' and label 'Person' for the new node.
+		  {} brackets(dấu ngoặc) to add properties to the node.
+	+ MATCH: Finding nodes.
+		Câu lệnh: MATCH (ee:Person) WHERE ee.name = "Emil" RETURN ee;
+	+ CREATE more:Nodes and relationships, CREATE clauses can create many nodes and relationships at once.
+		Câu lệnh: 
+			MATCH (ee:Person) WHERE ee.name = "Emil"
+
+			CREATE (js:Person { name: "Johan", from: "Sweden", learn: "surfing" }),
+			(ir:Person { name: "Ian", from: "England", title: "author" }),
+			(rvb:Person { name: "Rik", from: "Belgium", pet: "Orval" }),
+			(ally:Person { name: "Allison", from: "California", hobby: "surfing" }),
+
+			(ee)-[:KNOWS {since: 2001}]->(js),(ee)-[:KNOWS {rating: 5}]->(ir),
+			(js)-[:KNOWS]->(ir),(js)-[:KNOWS]->(rvb),
+			(ir)-[:KNOWS]->(js),(ir)-[:KNOWS]->(ally),
+			(rvb)-[:KNOWS]->(ally)
+	+ Pattern matching: Describe what to find in the graph.
+		Câu lệnh: Tìm bạn của Emil.
+			MATCH (ee:Person)-[:KNOWS]-(friends)
+			WHERE ee.name = "Emil" RETURN ee, friends
+	+ Recommend: Using patterns.Pattern matching can be used to make recommendations.
+	Johan is learning to surf, so he may want to find a new friend who already does:
+		Câu lệnh tìm người biết bơi(surfer): // DISTINCT (có nhiều người biết bơi(output)), //(): bỏ qua các nodes. 
+			MATCH (js:Person)-[:KNOWS]-()-[:KNOWS]-(surfer)
+			WHERE js.name = "Johan" AND surfer.hobby = "surfing"
+			RETURN DISTINCT surfer
+	+ Analyze: Using the visual query plan, Understand how your query works by prepending EXPLAIN  or  PROFILE:
+		Câu lệnh:
+			PROFILE MATCH (js:Person)-[:KNOWS]-()-[:KNOWS]-(surfer)
+			WHERE js.name = "Johan" AND surfer.hobby = "surfing"
+			RETURN DISTINCT surfer
+
+- Front-End:
+Tim hieu Front-end.
++Requirement: Tao nhieu project -> xuat hien Scollbar -> van giu duoc manubar.
+Them 1 div bao toan bo Table trong file :
+D:\SOURCE_GITHUB\ontology-workbench\frontend-server\app\contents\workbench\views\projects\project-list.html
+
+<div style="height: calc(100vh - 100px); overflow: scroll">
+<table></table>
+</div>
+Trong đó: calc(100vh - 100px) : ham tinh toan kich thuoc trong CSS.
+	+ 100vh: (vh: don vivertical-height in CSS): tinh toan chieu cao cua <header></header> la 100vh.
+	+ 100px: vung hien thi du lieu cua the div la 100px.
+
+
+// Ham phan trang:
+1. Tao phuong thuc  / Name file: project-list.js
+
+        var maxLengthComment=configNavigation.shortCommentLength;
+        $scope.getnumberofpage = function () {
+            var promise = ProjectService.getAll();
+            promise.then(
+                function (data) {
+                    // Response data from server
+                    var data = data.data;
+                    // Have notice from server
+                    if (data.code !== 0) {
+                        PopupService.showWarning($translate.instant('CODE_' + data.code));
+                    } else {
+			// get all data. 
+                        $scope.projects = data.data;
+                        // phan trang.
+                        $scope.totalItems = data.data.length;
+                        $scope.itemsPerPage = 5;
+                        $scope.currentPage = 1;
+                        $scope.maxSize = 175;
+
+                        $scope.pageCount = function () {
+                            return Math.ceil($scope.totalItems / $scope.itemsPerPage);
+                        };
+
+                        $scope.$watch('currentPage + itemsPerPage', function() {
+                            var begin = (($scope.currentPage - 1) * $scope.itemsPerPage),
+                                end = begin + $scope.itemsPerPage;
+
+                            $scope.filteredFriends = $scope.friends.slice(begin, end);
+                        });
+
+                        $scope.projects = $scope.shortingCommend(maxLengthComment, $scope.projects);
+                    }
+                },
+                // Network error
+                function () {
+                    PopupService.showError($translate.instant('CONNECT_TO_BACKEND_SERVER_ERROR'));
+                });
+        };
+        $scope.getnumberofpage();
+
+2.gan no trong file HTML project-list.html: trong file HTML goi file project-list.js ra
+<script src="project-list.js"></script>
+trong table doan show du dieu ra thi la nhu nay:  
+<tr ng-repeat="project in projects.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+
+=> ok.
+//Phan trang nay: moi chi de show du lieu tại client khi show du lieu.<ko uu tien dung>
+// Can tim hieu phan trang luon va get tu server ve.
+
+// Task mới:
+1. (構文的)リレーションリスト (Syntactic Relation List).
+-> Vao http://localhost:8888/#/project-list>Open>Class List>Thing>Event()/ chuyen sang 1 page moi(1.17.1)
+<keyword: class edit>
+- Goi du lieu kieu Blaze:
+- Su dung ham nay de lay data tu Blaze ra(lay class va cac subclass): BlazegraphSesameRemoteService
+- Tao class MoveInstance trong workbench/responses: de lay cac thuoc tinh cua Class, node,
+
+LUONG DU LIEU:
+- SQL(ClassEntity)-> Service -> V0\ClassController(back-end) -> Class.js(front-end/ service) 
+-> Class-edit.js(front-end/ controller) -> Class-edit.html(front-end/ view)
+back-end:
+	+ SQL(ClassEntity): khai bao cac bien(get,set) de su dung trong code.
+	+ Service: Viet cac ham thuc hien cac cong viec khac nhau.(get, set, tinh toan, ...)
+	+ V0\ClassController(back-end): 
+		1. Lay phuong thuc tu Service
+ @Autowired
+  ClassService classService;
+		2.viet cac phuong thuc de Class.js(front-end) goi de lay du lieu, thuc thi 1 chuc nang nao do.
+		3.su dung Annotation demap voi front-end
+@RequestMapping(
+      value = "/v0/projects/{projectId}/classes/{classId}/delete",
+      method = RequestMethod.PUT, produces = "application/json;charset=utf-8")
+
+front-end:
+	+ Class.js(front-end/ service): 
+		1. Su dung AngularJs goi Controller(back-end) thong qua duong dan var URL va goi cac phuong thuc trong Service(back-end).
+		2. goi ham ben Controller back-end va tra ve du lieu.
+	+ Class-edit.js(front-end/ controller):
+		1. goi Service.
+		2. su dung AngularJs de goi cac template, include de hien thi ra view.
+		3. su dung angularjs tao cac ham tra ve data da duoc lay o cac class truoc do. 
+	+ Class-edit.html(front-end/View):
+		1. Su dung(goi) data ben Class-edit.js(front-end/cotroller) de dua len view(html).
+- Class Response: khoi tao cac bien , phuong thuc de lay du lieu ra, sau do controller goi ham nay ra boi idxxx de lay gia tri da khai bao trong Respone.
+
+- TIM HIEU XEM CLASS LIST, PROPERTY LIST hien thi len nhung thong tin gi trong 5 kieu du lieu trong XML:
+	+ CLASS LIST:
+	+ kieu: <rdf:type > : la kieu cua Class.
+	+ kieu: <subClassOf > : noi den node nay la con cua node rdf:resource, khong co ben Property list.
+	+ kieu: <disjointWith > : noi den node nay cung cap voi node rdf:resource, khong co ben Property list.
+
+	+ PROPERTY LIST:  
+	+ kieu: <rdf:type > : la ObjectProperty, khong co ben Class list.
+	+ kieu: <subPropertyOf > : noi den node nay la con cua node rdf:resource, khong co ben Class list.
+	
+- DEBUG cau lenh Blaze:
+dat breack point : line 564 file: BlazegraphSesameRemoteService.java
+run Application -> man hinh cLass List -> click vao 1 node -> refresh -> tim dc cau lenh truy van Blaze:
+SELECT * WHERE {  ?s ?p <http://www.w3.org/2002/07/owl#Thing> }
+
+Tong Quan Neo4j:
+- Trong 1 du an co 1 Project va 1 Document.
+- Document chua nhieu Sentence(1cau).
+- Trong 1 Cau Sentence thi chua nhieu Instence(1 keyword trong cau).
+- Trong 1 Cau Sentence thi chua nhieu Token(1 doan trong cau).
+
+Tong Quan Database:
+- Du an dung 3 database khac nhau, cach lay ra cung rieng biet.
+- SQL: chua Project va Document:
+- Neo4j: chua Document, Sentence, instance, token: nhung cai nay se duoc luu trong tai lieu Document cua SQL.
+- Blaze graph: la 1 data dang Tree luu tru cac thuoc tinh cua Class la: Class va properties
+	+ 1 Class chua cac tinh chat rieng: vd: Toi la nguoi VN -> 3 class// Class Chu ngu: Toi , Class tro tu: la: Class Quoc Gia: VN
+	+ la 1 noi dung de luu cac class khac nhau -> la 1 lib -> de cho may hoc.
+	+ khi import 1 Document moi -> May tinh dua vao lib nay se phan loai cac instance trong sentence thuoc Class nào.
+=> nhan dang duoc(web ngu nghia).
+
+- RDF: La mo hinh du lieu co ban, tuong tu mo hinh thuc the entity-relationship.
+- RDF Schema: 
+	+ la mo hinh khoi dau cho viec to chuc phan cap cac doi tuong web,
+	+ Cac thanh phan chinh la: lop, thuoc tinh, lop con, thuoc tinh lop con, cac gioi han ve linh vuc(domain) va gia tri(range)
+	+ Su dung cu phap cua RDF, xay dung tu vung mo ta cac lop va thuoc tinh cua tai nguyen RDF.
+
+
+Requirement:
+2. インスタンスが出現する文を表示 / Show sentence containing the instance.\
+3. インスタンスの移動 (Move Instance).
+link Checkbox of List items: https://vitalets.github.io/checklist-model/ 
+
+=> Class list->Click vao lable node (A(2)) -> se hien thi man hinh 2.11 インスタンスリスト (Instance List) // 2 la so instance trong Class A(NodeA,B,C,..)
+trong tai lieu: http://10.16.56.17/ontology-workbench/specification/blob/master/specification/function/front-end-server.md
+->Từ 2.11: click link: relation -> chuyen sang man hinh 2.17
+->Từ 2.11: click link: Move Class -> chuyen sang man hinh 2.19
+Move class: la di chuyen Instance nay sang Class khac duoc lua chon o man hinh 2.19.
+Man hinh 2.19: 
+	+ Show all cac Sentence co chua instance ma minh can di chuyen.
+	+ Show all cac Class chọn class mà muốn di chuyển instance vào.
+// tham khao phan RelationShip[node]: https://neo4j.com/docs/java-reference/current/javadocs/org/neo4j/graphdb/Relationship.html
+
+
+
+5. Tìm hiểu công nghệ Docker để có thể triển khai ứng dụng một cách thuận tiện phục vụ cho việc kiểm thử.
+
+6. Tìm hiểu về Spring-Boot sẽ được áp dụng để xây dựng Back_end của dự án.
+
+
+// Tu tuong thang: relation-list.
+<h1><b>（D＆Mプロセス改革室 ）の係り受け一覧</b></h1>
+<u><a href="#/instance-list/{{projectId}}/classes/{{classId}}" translate>CLASS_EDIT_BACK_TO_INSTANCE_LIST_LABEL</a></u><br>
+<hr  width="30%" size="5px" align="left" />
+<table>
+    <tr>
+        <th>かかり元</th>
+        <th>接続</th>
+        <th></th>
+        <th>接続</th>
+        <th>かかり先</th>
+    </tr>
+    <tr ng-repeat="item in instancesAfter">
+        <td>{{item.instanceBefore.name}}</td>
+        <td><a href="#">{{item.funcionLabel}}</a></td>
+            <td>D＆Mプロセス改革室 {{item.instanceCurrent.name}}</td>
+        <td><a href="#">{{}}</a></td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="item in instances">
+        <td></td>
+        <td><a href="#">{{item.instanceCurrent.functionLabel}}</a></td>
+        <td>D＆Mプロセス改革室 {{item.instanceCurrent.name}}</td>
+        <td><a href="#">{{}}</a></td>
+        <td>{{item.instanceAfter.name}}</td>
+    </tr>
+</table>
+
+12/09/2016.
+// Lam tai lieu: Su dung Enterprise Artchitect <ve cac so do quan he, luong di cua web>
+- Vao day de bat ung dung: D:\SOURCE_GITHUB\Tailieu\specification\specification\design-document\dot
+- Muon viet luong cho man hinh nao thi mac dinh o ngay buoc truoc man hinh do roi, chi can click 1 cai la vao man hinh do.
+- Cac man hinh can lam:
++ Instance List: v
++ Instance - Relation: v
++ Instance - Move Class: v
+
++ Document list: done.
+
+13/09/2016.
++ Download Document: done.
++ Delete Document: done.
+
+14/09/2016.
+// node nho anh Viet dich:
+[‎9/‎14/‎2016 9:26 AM] Pham Duy Tan (FSU11.F-1): 
+đầy đủ là: "CLASS_RELATION_LIST_SCREEN_HEADER":"({{instanceName}}) の係り受け一覧", 
+[‎9/‎14/‎2016 9:28 AM] Mai Huy Viet (FAP.DMO): 
+anh nghĩ chữ Tiếng Anh đơn giản để:
+Syntactic Relation List of {instance name}
+thay cái biến "instance name" thành tên của instance nhé
+[‎9/‎14/‎2016 9:29 AM] Mai Huy Viet (FAP.DMO): 
+Syntactic Relation List of (instance name)
+[‎9/‎14/‎2016 9:33 AM] Pham Duy Tan (FSU11.F-1): 
+Vâng
+em cảm ơn anh.
+[‎9/‎14/‎2016 9:33 AM] Mai Huy Viet (FAP.DMO): 
+okie
+
+List viec can lam o phan nay:
+\\10.16.34.118\fsu17\BU68\Projects\FujiXerox\R&D\RD-0716\RD-071602\WorkBench\Wip\Users\TheNT1
+Squence diagram:
++ Instance List: done.
++ Instance - Relation: done.
++ Instance - Move Class:
+
++ Document list: done.
++ Download Document: done.
++ Delete Document: done.
+
+15/09/2016
+ "RELATION_TABLE_HEADER_1":"かかり元",
+  "RELATION_TABLE_HEADER_2":"接続",
+  "RELATION_TABLE_HEADER_3":"",
+  "RELATION_TABLE_HEADER_4":"接続",
+  "RELATION_TABLE_HEADER_5":"かかり先",
+=> Tuong ung:
+Source
+connection
+Destination
+
+Update: Squence diagram:
++ Document list: done.
++ Download Document: done.
++ Delete Document: done.
+
++ Instance List: done.
++ Instance - Relation: done-checklai url.
++ Instance - Move Class: done.
+
+16/09/2016
++ Training Build docker de tao moi truong test.
++ SelfReview Bieu do Activity va Sequence.
+
+
+Dictionary:
+
+戻る: Quay lai.
+
+Socket:
+- La tool ho tro viec lap trinh mang.
+- ket noi dua vao host,port giua Client-Server <2,nhieu may tinh voi nhau.>
+- Truyen du lieu thong qua host, port, inputStream, outputStream.
+– Socket.IO có thể gửi và nhận các event tự tạo với phương thức emit(). 
+Hai phía gửi và nhận phải biết được tên của event đó để thực hiện giao tiếp:
+Ví dụ:
+// client gửi một dòng message "welcome" lên event "hello"
+socket.emit("hello", {msg: "welcome"});
+
+// Server nhận sự kiện event đưa lên
+socket.on("hello", function (data) {
+	console.log(data);
+});
+Link socket:
+https://voer.edu.vn/c/socket-duoi-ngon-ngu-java/761b0302/4f8ba8e9
+
+import java.io.*;import java.net.Socket;public class TCPEchoClient{    
+public static void main(String args[]){        
+try {            
+// Kết nối đến Server // (args[0], 7) = (www.cit.ctu.edu.vn”,80) = (“203.162.36.149”,80);
+Socket s = new Socket(args[0],7);            
+
+// Lấy InputStream - nhan du lieu tu Server gui ve.
+InputStream is = s.getInputStream();
+
+// Lấy OutputStream - đẩy dữ liệu lên server.
+OutputStream os = s.getOutputStream(); 
+
+for (int i='0'; i<='9';i++){     
+// Gui ‘0’ ->’9’ den EchoServer
+os.write(i);            
+
+// Gởi 1 ký tự sang Server
+int ch = is.read();             
+
+// Chờ nhận 1 ký tự từ Server
+System.out.print((char)ch); 
+// In ký tự nhận được ra màn hình
+} } }
+
+Fix comment:
+- STT 3: OK.
+	+ Da thong bao loi la: DocumentID da ton tai.
+	+ Upload dc tai lieu ngay tai man hinh nay.
+	+ Mesage thong bao can update ca o file [JP],[EN]-> nho commter dich
+	->Document id already exists, Do you like continue? : -> [JP]
+	->Do you like continue? : 継続しますか？
+	
+Note: 
++ Khi mo man hinh view thi dong thoi socket cung duoc mo thong qua trang thai "open".
++ Uu diem khi dung socket so voi https la: socket luon luon mo.
++ Khi lam viec voi socket thi no se thong qua controller de nhan cac messeage de dua ra huong xu lý ben backend cho chương trinh.
+
++ Cach su dung CSS de thay doi thuoc tinh the <a  href="">
+ if (!data.data.imported) {
+                  $('#deleteAlldata').removeClass('deleteAlldataEnable').addClass('deleteAlldataDisable');
+                } else {
+                  $('#deleteAlldata').removeClass('deleteAlldataDisable').addClass('deleteAlldataEnable');
+                }
+                if (!data.data.existDocument) {
+                  $('#deleteAllinstance').removeClass('deleteAlldataEnable').addClass('deleteAlldataDisable');
+                } else {
+                 $('#deleteAllinstance').removeClass('deleteAlldataDisable').addClass('deleteAlldataEnable');
+                }
+                  $scope.project = data.data;
+				  
+// trong do: trong file.css them 2 class nay(ten class 'deleteAlldataEnable' thi thich dat the nao cung dc):
+.deleteAlldataDisable{
+// TODO
+}
+deleteAlldataEnable{
+// TODO
+}
+
+- STT 4: OK.
+Disable link<not button>.
++ Thay projectEntity = projectDTO
++ Them vao trong projectDTO them field : existDocument;// de check isExist() documentId tron project.
++ Tao them ham nay trong projectService de check isExist()documentId projectInfoById()
+
+- STT 7: Pending-chua phai lam.
+- STT 8:
+Gan doan code xoa tat ca instance nay truoc khi Import vao file ImportDocumentService:
+if (true// neu da ton tai document) {
+        this.documentNeo4jService.deleteDocumentByProjectId(projectId);
+        // delete all Sentence of neo4j DB
+        this.sentenceNeo4jService.deleteSentenceByProjectId(projectId);
+        // delete all Token of neo4j DB
+        this.tokenNeo4jService.deleteTokenByProjectId(projectId);
+        // delete all document of neo4j DB
+        this.instanceNeo4jService.deleteInstanceByProjectId(projectId);
+		
+		///
+        this.documentService.deleteDocumentByProjectId(projectId);
+      } 
+
+- STT 13: OK
+=> NN:luc delete project, nen hien thi 1 cai layout de user không thao tác được thêm trong quá trình delete, tránh trường hợp user click delete chinh project do tiep.
+>> lam giong voi delete document.
+=> GQ:Them 1 line code:
+PopupService.showProgress();
+vao trong doan check 
+if (result) {
+	// trong file project-list. 
+}
+
+26/09/2016
+Tim hieu: mockmvc, unit test.
+http://blog.co-mit.com/post/55/JUNIT%3A+S%E1%BB%AD+d%E1%BB%A5ng+Mockito+v%E1%BB%9Bi+jUnit+trong+Spring+Unit+Testing
+
+- Các hàm thường sử dụng trong Mockito
++ Mockito.when(T methodCall): dùng để giả lập một lời gọi hàm nào đó được sử dụng bên trong method đang được kiểm thử.
++ Hàm Mockito.when() thường đi kèm với .thenReturn(), .thenAnswer(), .thenThrow() để chỉ định kết quả trả lại.
+//Khi method_A được gọi thì trả về kết quả là “demoValue”: 
+Mockito.when(method_A()).thenReturn("demoValue");
+ 
++ – Các method Mockito.anyString(), Mockito.anyInt(), Mockito.any,… thường được dùng khi mock các method có tham số, 
+mà bạn không xác định được giá trị của các tham số đó.
+
+27/09/2016
+Check lai code va tai lieu fixbug.
+
+28/09/2016
+Can viet testcase cho cac phan sau:
++ jp.co.workbench.controller.v0
++ jp.co.workbench.services.bigdata
++ jp.co.workbench.services.mysql
++ jp.co.workbench.services.neo4j
+
++ Fix bug: 
+bug: 12
+// 
+bug: 13: Ok.
+[‎9/‎28/‎2016 4:26 PM] Mai Huy Viet (FAP.DMO): 
+Delete all Instance: de xoa Instance
+tuc la document
+vay, khi co document, thi ca 2 deu phai sang
+[‎9/‎28/‎2016 4:27 PM] Mai Huy Viet (FAP.DMO): 
+con chi co Onto ma ko co Document, thi chi Delete All moi sang thoi
+noi chung, em xem bang "cac chuc nang Delete"
+de thay duoc la 2 thang do no xoa nhung j
+neu cu co du lieu de no xoa duoc, thi phai enable no len
+ok?
+
+//@Test, Unit test su dung Mokito. 
+@Test
+  public void getClassEntityByClassIdAndProjectIdWhenThrowOntologyWorkbenchException()
+      throws Exception {
+    Mockito.when(projectService.checkProjectId(anyString())).thenReturn(true);
+    Mockito.when(
+        classService.getClassEntity(anyString(), any(URI.class), anyString()))
+        .thenThrow(
+            new OntologyWorkbenchException(
+                MessageCodes.BLAZEGRAPH_QUERY_EXCEPTION, ""));
+    mockMvc
+        .perform(
+            get(projectBaseUrl + "/" + projectId + "/classes/" + classId)
+                .accept(MediaType.APPLICATION_JSON_UTF8))
+        .andExpect(status().isOk())
+        .andExpect(
+            jsonPath("$.code",
+                Matchers.is(MessageCodes.BLAZEGRAPH_QUERY_EXCEPTION)));
+
+    Mockito.verify(projectService, Mockito.times(1))
+        .checkProjectId(anyString());
+    Mockito.verify(classService, Mockito.times(1)).getClassEntity(anyString(),
+        any(URI.class), anyString());
+  }
+  
+  
+ // Nhung ham can them ThrowException() va add them ma code.
+ 1. SynrelRelationNeo4jDto (MessageCodes.SYNREL_NOT_FOUND)
+ 2. findByProjectIdAndClassIdAndFunctionLabel (MessageCodes.SENTENCES_NOT_FOUND)
+ 
+ - Ip may anh Hao: \\10.16.116.83\22.work_bench
+ 
+03/10/2016.
+- Tim hieu tooltip AngularJS
+- TH: 1line input nhap vao qua nhieu ky ty thi chi show ra gioi han 1 so luong ky tu nhat dinh (30)
+ sau do dung tooltip de khi si chuot qua dau ... thi no se show popup hien thi toan bo noi dung len.
+
+
+ 04/10/2016
+ - Show tooltip: Done.
+ - Create Semantic Relation List Screen.
+ 
+ [‎10/‎5/‎2016 4:53 PM] An Thuy Linh (FSU17.JCD): 
+プロパティ（サブイベント）のDomain/Range制約を満たすインスタンスのペアの一覧
+[‎10/‎5/‎2016 4:54 PM] Pham Duy Tan (FSU11.F-1): 
+ak, cả cái dòng thứ 2 nữa ạ chỗ subj() --> obj
+[‎10/‎5/‎2016 4:55 PM] An Thuy Linh (FSU17.JCD): 
+subj(青)-[サブイベント]->obj(赤)
+
+05/10/2016
+- Create Semantic Relation List Screen: Done.
+- Update Constants [EN],[JP].
+
+06/10/2016
+- Update Constants [EN],[JP]: Done.
+- Tim hieu AngularJs events con tro chuot.(Di chuyen chuot den dau thi tooltip hien thi di theo do.)
+http://www.ufthelp.com/2014/12/Tooltip-Directive-AngularJS.html
+http://embed.plnkr.co/8p02DDId5ysgRnkgoSBT/
+http://jsfiddle.net/JVDFc/
+- SubString de cho khong cho chu bi cat o giua truoc khi: Done.
+- Tim hieu luong insert, delete data.
+ window.onmousemove = function (e) {
+                    var x = (e.clientX + 20) + 'px',
+                        y = (e.clientY + 20) + 'px';
+                    for (var i = 0; i < tooltips.length; i++) {
+                        tooltips[i].style.top = y;
+                        tooltips[i].style.left = x;
+                    }
+                };
+
+07/10/2016
+- Show tooltip theo Event moi: Done(project-list.js,html)
+Error:  tags: tooltip-append-to-body="true"; tooltip-placement=""
+This inspection highlights unknown HTML tag attributes as invalid, 
+and lets mark such attributes as Custom to avoid highlighting them as invalid.
+
+
+10/10/2016
+Mapping event giua front-end va back-end su dung socket la thong qua: 
+-back-end:
++ file websocket.xml khai bao config cac ham handle xu ly su kien va URL de mapping data.
+// mapping voi front-end qua duong link URL:
+<websocket:mapping path="/ws/import/document" handler="importDocumentHandler"/>
+
+// mapping voi cac ham xu ly o back-end:
+<bean id="importDocumentHandler" class="jp.co.workbench.websocket.handler.ImportDocumentHandler"/>
+
+- Front-End:
++ tai file abc.js co doan nay de mapping xu ly data.
+var socket = io.connect(
+          window.location.host + config.deleteAllData,
+          {'forceNew': true}
+      );
+-> dan den link "deleteAllData": URL de map:
+
+- File Common.js:
+khai bao link mapping voi back-end "deleteAllData" : '/ws/delete/all/data'
+- "deleteAllData" : '/ws/delete/all/data' : duoc khai bao tong runtime.json
+- "deleteAllData" : '/ws/delete/all/data' Connect toi back-end thong qua file ws.js
+// Request delete all data to backend server
+var _socketDeleteAllData = io.of('/ws/delete/all/data');
+
+
+
+11/10/2016
+Tim hieu luong di du an: Event, download, delete.
++ Download: <a href="{{downloadURL}}/{{document.id}}" class="btn btn-primary btn-xs">
+-> 
+>Request:goi den duong dan URL ben Controller.
+>Controller: Goi den Service.
+>Service: khai bao bien URL mapping back-end, thao tac voi database.
+>Controller: lay data tu Service tra lai cho Request
+-> Okie.
+
++ Delete: <button ng-click="deleteDocument(document.id)">
+->
+>Request: Goi ham su kien Click() den ham o ben Controller.
+>Controller:
+	> Goi ham xu ly Confirm Popup ben service.
+	> Goi ham xu ly nghiep vu ben service.
+>Service:
+	> goi URL template man hinh popup confirm.
+	> goi controller popup de tra ve message xu ly.
+	> dua vao lua chon cua User lay ket qua message tra lai cho Controller de xem co tiep tuc action hay ko ?
+	> Create ham return URL mapping voi back-end.
+> Controller:
+	> lay data tu service tra lai cho request.
+
+12/10/2016. Tim hieu:
++ ImportDocument: <a class="btn btn-success btn-sm" href="#/import-document/{{projectId}}" >
+->
+>Request: goi den duong dan link URL nhay sang man hinh import-document duoc khai bao trong App.js
+
+-> Import-document(page/FE): <button type="submit" class="btn btn-danger" id="btnConfirm" translate  ng-click="doConfirm()">
+> Request: goi den ham xy ly su kien click() o ben Controller.
+
+> Controller(FE): ham xu ly su kien o day gui di 1 su kien: "import-confirm", idDoc, idProject toi trang dieu huong../router/Ws.js.
+ socket.emit("import-confirm", projectId, $scope.importDocument.id);
+ Tai: ../router/Ws.js se nhan event "import-confirm", idDoc, idProject va gui chung toi server de mapping voi websocket ben back-end.
+ 
+> websocket(BE): 
+	> websockehandle: case "import-confirm":
+		> Nhan duoc message, idDoc, idProject tu Front-End.
+		> check ton tai idDoc thi tra ve cho front-end 1 event message: "OVERWRITE_IMPORT" thong qua ham: emitStatus().
+		
+>Controller(FE): socket.on('overwrite-import', function (data) { // TODO: }
+	> Confirm popup de co tiep tuc import hay k?
+	> ok -> goi ham: doImportDocument().
+	> check file type.
+	> gui su kien 'file:upload' kem theo thong tin: projectId, fileName, fileType, documentId, documentComment toi ../router/Ws.js.
+		var ss = require('socket.io-stream');
+		var serverStream = ss.createStream();
+		// Send document data to websocket server
+		ss(socket).emit('file:upload', serverStream,..);
+	> show percenttage(%) upload,
+
+	Tai: ../router/Ws.js se nhan event 'file:upload', projectId, message, fileName, fileType, documentId, documentComment 
+	va gui chung toi server de mapping voi websocket ben back-end.
+	
+> websocket(BE): 
+	> websockehandle: case "file:upload":
+		> Nhan duoc message, projectId, fileName, fileType, documentId, documentComment tu Front-End.
+		> check File type hop le thi tra ve cho front-end 1 event message: "do-upload" thong qua ham: emitStatus().
+		
+> ../router/Ws.js(FE): else if (data.message === 'do-upload')
+	> gui proferties file toi server: clientStream.on("data", function (data) {// TODO: projectId, message:'file:data', data}
+	> do upload xong.
+	> clientStream.on("end", function () {// TODO: thong bao ket thuc upload , va gui message:'doimport' toi server}
+	
+> websocket(BE):
+	websockehandle: case "doimport": // import data to blazegraph database
+		> goi service 
+		
+	
+13/10/2016
+- Tim hieu import document.
+// Chuyen doi(Convert) tu File -> String.
+ public static String readContentFromFile(File file) {
+    FileInputStream inputStream = null;
+    String data = "";
+    try {
+      inputStream = new FileInputStream(file);
+      data = IOUtils.toString(inputStream);
+    } catch (Exception e) {
+      e.printStackTrace();
+    return data;
+  }
+
+- Create export-ontology Screen: Done.
+
+14/10/2016.
+- Tim hieu du lieu kieu RDF/XML.
+	+ Cách du lieu duoc import vào database BlazeGraph(Triplestore).
+	
+- Tim hieu du lieu kieu Turtle.
+
+Ví dụ:
+Một ví dụ về truy vấn SPARQL các mô hình câu hỏi "tất cả các thủ đô quốc gia ở châu Phi là gì?":
+Vi du:
+Namespace [9950d487-f11d-49a7-bd1f-fea854c75824]. 
+Query: SELECT * WHERE { <http://judas.rdh.fujixerox.co.jp/ontology/class#データ> ?p ?o }
+
+PREFIX abc: <http://example.com/exampleOntology#>
+SELECT ?capital ?country
+WHERE {
+  ?x abc:cityname ?capital;
+     abc:isCapitalOf ?y.
+  ?y abc:countryname ?country;
+     abc:isInContinent abc:Africa.
+}
+Các biến được chỉ định bởi tiền tố "?" hoặc "$". Truy vấn rằng buộc các dữ liệu là ?capital và ?country sau đó trả về kết quả.
+
+Để thực hiện các truy vấn ngắn gọn, SPARQL cho phép định nghĩa các tiền tố và các URI cơ sở trong một cách như Turtle.
+Trong truy vấn này, các tiền tố "abc" là viết tắt của đường dẫn "http://example.com/exampleOntology #".
+
+Tim Hieu RDF: 
+link: C:\Users\tanpd2\Downloads\Noi dung webNN co ban.
+- RDF (Resource Description Framework): là một mô hình để biểu diễn dữ liệu về "Mọi thứ trên Web".
+> RDF chính là nền tảng của Semantic Web, là linh hồn của Semantic Web. 
+> RDF mô tả siêu dữ liệu về các tài nguyên trên Web. 
+> RDF dựa trên cú pháp XML tuy nhiên XML chỉ mô tả dữ liệu, 
+> RDF còn có khả năng biểu diễn ngữ nghĩa giữa chúng thông qua các tài nguyên được định danh bằng URI.	
+
+Mô hình cơ bản của RDF gồm ba bộ phận sau: 
+-	Tài nguyên (Resources) là tất cả những gì được mô tả bằng biểu thức RDF
+-	Thuộc tính (Properties) là đặc tính hay quan hệ mô tả tính chất tài nguyên
+-	Phát biểu (Statements) mỗi phát biểu gồm ba thành phần sau 
++	Subject (chủ thể): địa chỉ hay vị trí tài nguyên muốn mô tả. 
++	Predicate (thuộc tính): xác định tính chất của tài nguyên. 
++	Object (đối tượng): nội dung gán cho thuộc tính.
+Mỗi một mệnh đề (subject, predicate, object) còn gọi là một bộ ba (triple). 
++ RDFS is cơ bản nói about describing classes of objects.
+VD:
+Subject(HieuNT)->Predicate(Lives in)->Object(Ha Noi)
+
+- rdfs:range is an instance of rdf:Property that is used to state that the values of a property are instances of one or more classes.
+- rdfs:domain is an instance of rdf:Property that is used to state that any resource that has a given property is an instance of one or more classes.
+
+ <rdf:Property rdf:about="http://www.w3.org/2000/01/rdf-schema#range">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
+        <rdfs:label>range</rdfs:label>
+        <rdfs:comment>A range of the subject property.</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+ </rdf:Property>
+
+ 
+ 
+
+- Cấu trúc RDF/XML:
+Mô hình RDF thể hiện một mô hình ở mức trừu tượng để định nghĩa metadata(Sieu du lieu).
+Cú pháp RDF được dùng để tạo ra và trao đổi metadata. RDF dựa trên cú pháp XML. 
+Cú pháp cơ bản của RDF có dạng như sau:
+[1] RDF ::= ['<rdf:RDF>'] description* ['</rdf:RDF>'] 
+[2] description ::= '<rdf:Description' idAboutAttr? '>' propertyElt* '</rdf:Description>' 
+[3] idAboutAttr ::= idAttr | aboutAttr 
+[4] aboutAttr ::= 'about="' URI-reference '"' 
+[5] idAttr ::= 'ID="' IDsymbol '"' 
+[6] propertyElt ::= '<' propName '>' value '</' propName '>'| '<' propName resourceAttr '/>' 
+[7] propName ::= Qname 
+[8] value ::= description | string 
+[9] resourceAttr ::= 'resource="'tham chiếu URI'"' 
+[10] Qname ::= [ NSprefix ':' ] name 
+[11] URI-reference ::= string, interpreted per [URI] 
+[12] IDsymbol ::= (bất kỳ ID nào hợp lệ nào của XML) 
+[13] name ::= (bất kỳ tên hợp lệ nào của XML) 
+[14] NSprefix ::= (bất kỳ tiếp đầu ngữ namespace hợp lệ nào) 
+[15] string ::= (bất kỳ chuỗi nào) 
+Ví dụ : Xét phát biểu 
+ex:index.html exterms:creation-date "August 16, 1999" . 
+Cú pháp RDF/XML để biểu diễn cho phát biểu trên như sau:
+1. <?xml version="1.0"?> 
+2. <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+3. xmlns:exterms="http://www.example.org/terms/"> 
+4. <rdf:Description rdf:about="http://www.example.org/index.html"> 
+5. <exterms:creation-date>August 16, 1999</exterms:creation-date> 
+6. </rdf:Description> 
+7. </rdf:RDF>
+Trong đó: 
+Dòng 1: là khai báo XML, cho biết nội dung theo sau dựa trên cú pháp XML và phiên bản XML được dùng.
+Dòng 2 và 3: bắt đầu với thẻ rdf:RDF , cho biết rằng nội dung XML tiếp 
+theo mô tả RDF. Từ khóa này xác định tài liệu này được biểu diễn dưới dạng RDF. Tiếp theo là phần khai báo XML namespace được sử dụng trong tài liệu, tùy vào nhu cầu và mục đích sử dụng mà ta có thể dùng các namespace khác nhau cho từng tài liệu. 
+Dòng 4, 5, 6: mô tả những mệnh đề RDF. Để mô tả bất kỳ phát biểu nào 
+dạng RDF/XML có thể dùng rdf:Description, và rdf:about , đây chính là 
+subject của phát biểu. Thẻ bắt đầu rdf:Description trong dòng 4 cho biết bắt đầu mô tả về một resource, và tiếp tục định danh resource này dùng thuộc tính rdf:about để chỉ ra URI của subject resource. Dòng 5 cung cấp 1 phần tử thuộc tính, với Qname exterms:creation-date như là thẻ của nó. Nội dung của phần tử thuộc tính này là object của statement, có giá trị là kiểu plain literal “August 19, 1999 “. 
+Dòng 7: cho biết kết thúc của thẻ rdf:RDF bắt đầu ở dòng 2 và cũng là thẻ 
+kết thúc của tài liệu RDF
+
+17/10/2016.
+RDF/XML:
+http://www.linkeddatatools.com/introducing-rdf-part-2
+Turtle:
+https://www.iro.umontreal.ca/~lapalme/ForestInsteadOfTheTrees/HTML/ch07s01.html
+
+require "rdf/turtle"
+fb = "../freebase/freebase-rdf-2013-03-03-00-00.ttl"
+fb_prefixes = {
+  ns:  "http://rdf.freebase.com/ns/",
+  key:  "http://rdf.freebase.com/key/",
+  owl:  "http://www.w3.org/2002/07/owl#>",
+  rdfs:  "http://www.w3.org/2000/01/rdf-schema#",
+  rdf:  "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  xsd:  "http://www.w3.org/2001/XMLSchema#"
+}
+RDF::Turtle::Reader.open(fb,
+  freebase:  true,
+  prefixes:  fb_prefixes) do |r|
+
+  r.each_statement {|stmt| puts stmt.to_ntriples}
+end
+
+
+Tim hieu RDF: https://www.iro.umontreal.ca/~lapalme/ForestInsteadOfTheTrees/HTML/ch07s01.html
+Graphical form:Subject->predicate->Object
+Triple:	subject predicate object
+Relational form: predicate(subject,object)
+RDF/XML:
+<rdf:Description rdf:about="subject">
+    <ex:predicate>
+         <rdf:Description rdf:about="object"/>
+    </ex:predicate>
+</rdf:Description>
+Turtle: subject ex:predicate object.
+
+Web tao data Ontology online:
+http://webposible.com/utilidades/dublincore-metadata-gen/index.php?lang=en#resultados-metadatos
+
+- Tim Class>tim thuoc tinh cua no>lay no ra>
+Append no ra file > export > Ok.
+
+Cau truc:
+Append:Header
+Append:Content
+Append:EndHeader
+
+20/10/2016
+Cach test theo URL(Controller)
+[Controller-BE]
+@RequestMapping(
+      value = "/v0/export/{projectId}", method = RequestMethod.GET,
+      produces = "application/json;charset=utf-8")
+
+> Run Application
+> Trinh duyet > http://10.16.116.81:8081//v0/export/0df51d3f-156f-47aa-bfe3-065e4eacf87e
+trong do:
+ http://10.16.116.81:8081/ : Dia chi Ip Local cua may.
+ 0df51d3f-156f-47aa-bfe3-065e4eacf87e: ProjectId.
+ 
+ => Hien thi output o man hinh console Java.
+ 
+ Link test: Export Data in BlazeGraph.
+ http://10.16.116.81:8081//v0/export/0df51d3f-156f-47aa-bfe3-065e4eacf87e
+ 
+ Class: vao ClassController/ ClassService
+ Property: 
+ propertycontroller: getPropertiesByProjectId
+ service: getPropertiesByProjectId
+ 
+ 
+ NOte:
+ Cach chuyen tu length thuong sang kieu byte se keo dai duoc do dai de luu file hon:
+ //			System.out.println("--------------------"); // ko co gi.
+//			System.out.println(strResult);
+//			System.out.println("--------------------");
+//			System.out.println(strResult.length()); // > 30.000 ky tu.
+//			System.out.println("--------------------");
+//			System.out.println(strResult.getBytes().length); // > 40.000 ky tu
+//			System.out.println("--------------------");
+
+	/*
+			 * System.out.println("--------------------");
+			 * System.out.println(result.toString());
+			 * System.out.println("--------------------");
+			 */
+
+			 
+26/10/2016
+
+- AngularJS check require: 
+http://jsfiddle.net/tryggve/thbkA/
+
+
+27/10/2016
+
+- Doc requirement Export Instances: Done.
+- Create Export Instances Screen.
+- Link export-ontology:
+<a style="width: 48%;" class="btn btn-primary btn-xs" href="{{exportOntologyURL}}/{{projectId}}" download>
+    <span class="fa fa-download"></span>
+    <span translate>PROJECT_TASK_EXPORT_BUTTON_LABEL</span>
+</a>
+			
+28/10/2016
+- Link check format Turtle online: http://www.easyrdf.org/converter
+- Code convert RDF/XML -> Turtle file:
+File file = new File("D:\\testExport\\ExportOntology.xml");
+			InputStream inputStream = new FileInputStream(file);
+			// create a parser for RDF/XML and a writer for Turtle
+			RDFParser rdfParser = Rio.createParser(RDFFormat.RDFXML);
+			RDFWriter rdfWriter = Rio.createWriter(RDFFormat.TURTLE, 
+					new FileOutputStream("D:\\testExport\\example-output.ttl"));
+
+			// link our parser to our writer...
+			rdfParser.setRDFHandler(rdfWriter);
+			// ...and start the conversion!
+			rdfParser.parse(inputStream, rdfWriter.toString());
+
+- radio check: https://docs.angularjs.org/api/ng/input/input%5Bradio%5D
+
+
+31/10/2016
+- ng-show and radio button for show Div tag: http://plnkr.co/edit/yU6Oj36u9xSJdLwKJLTZ?p=preview
+- use: check if type true thi export XML , false export Turtle.
+- link URL export: 
+<a style="width: 48%;" class="btn btn-primary btn-xs" href="{{exportOntologyURL}}/{{projectId}}/true" download>
+	<span class="fa fa-download"></span>
+	<span translate>PROJECT_TASK_EXPORT_BUTTON_LABEL</span>
+</a>
+
+
+1/11/2016:
+- Tim hieu export và cấu trúc File Instance.xml
+
+2/12/2016:
+- Tim hieu export instance file.
+ // Creating a random UUID (Universally unique identifier).
+        UUID uuid = UUID.randomUUID();
+        String randomUUIDString = uuid.toString();
+        System.out.println("Random UUID String = " + randomUUIDString);
+// UUID: AC47AE35-7FE2-4EFF-A281-5EB922651AC1. 
+		
+		
+Cac buoc(yt):
+1. Tao 1 function o controller de create a String (S).
+2. Service: Create a funtion de get InstanceEntity().// lay cac thuoc tinh Entity nay cho vao trong chuoi S.
++ get InstanceEntity dua vao ProjectId.
+
+3/12/2016:
+- Coding Export Instance file.
+		
+Instance File:
++ Object Properties
++ Data properties
++ Classes
++ Individuals
+
+07/11/2016.
+Study code.
+
+8/11/2016.
+- Tao them 1 bien URI(UUID.random()) vao trong Token trong Neo4j. v
+- Khi update 1 cho thi tat ca cac cho khac cua Token cung dc update(Define).v
++ Tim cho import document.
++ Query all token -> add cai uri namespace trong Define nay la xong.
+- export ra file Instance.
++ Create Instance Export.
+
+9/11/2011:
++ code: Insert link UUID into Neo4j when create document.
+
+10/11/2016
++ Code update link URI khi nhan update thi no update ca vao Neo4j, hien tai moi chi dang update vao Mysql.
+
+11/11/2016
++ Update code Update Link URI Define.
++ Study code.
+
+14/11/2016
+- Semina Responsive Design.
+	+ Them the <meta ....> o header de no nhan biet duoc day la web responsive design.
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	+ Them thuoc tinh CSS: box-sizing de auto can chinh cac item, button khi thay doi kich thuoc giao dien.
+div {
+    width: 300px;
+    height: 100px;
+    border: 1px solid blue;
+    box-sizing: border-box;
+}
+	+ Query trong CSS: @media kieu nhu if-else de voi moi mot giao dien # nhau se hien thi properties # nhau da duoc dinh nghia trong no.
+@media only screen and (max-width: 500px) {
+body {
+	background-color: lightblue;
+    }
+}
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-m-1 {width: 8.33%;}
+    .col-m-2 {width: 16.66%;}
+    .col-m-3 {width: 25%;}
+	}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+	}
+
+- Study Angularjs.
+- update code import.
+
+15/11/2016
+- free test.
+- xem code chuc nang export.
+	+ export kieu 1: khoi tao 1 chuoi String xong dung no de tao file XML, Turtle.
+	String strResult = result.toString();
+	// set ContenType.
+        response.setContentType("application/xml");
+        /*
+         * "Content-Disposition : attachment" will be directly download, may provide save as popup,
+         * based on your browser setting
+         */
+        response.setHeader("Content-Disposition",
+            String.format("attachment; filename=\"%s\"", "ExportOntology.xml"));
+
+        // set file length,
+        // response.setContentLength(strResult.length());
+        response.setContentLength(strResult.getBytes().length);
+
+        // get data from server.
+        InputStream inputStream = new ByteArrayInputStream(
+            strResult.getBytes(StandardCharsets.UTF_8));
+
+        // Copy bytes from source to destination(outputstream in this
+        // example), closes both streams.
+        FileCopyUtils.copy(inputStream, response.getOutputStream());
+	+ export kieu 2: su dung template la cac file minh da tao san, moi mot file tao san nay la 1 part nho trong file goc.
+	sau do ta dung ham replace(param x) de noi chuoi thong qua {expression}
+
+//StrSubstitutor works like this:
+Map map = HashMap();
+map.put("animal", "quick brown fox");
+map.put("target", "lazy dog");
+StrSubstitutor sub = new StrSubstitutor(map);
+String resolvedString = sub.replace("The ${animal} jumped over the ${target}.");
+Result :=>: resolvedString = "The quick brown fox jumped over the lazy dog."
+
+// Cach get 1 file va chuyen luon no ve dang String de tao file tong su dung ham nay:
+template = IOUtils.toString(
+          this.getClass().getClassLoader()
+              .getResourceAsStream("export-template/Export_Instances.txt"), "UTF-8");
+=> neu co 5 file part nua thi tao them 5 cai nhu nay. Sau do su dung ham replace() o tren de noi.
+
++ Tao 2 Class(Object)Khai bao Entity cho Synrel va chunk thi cai khac nhau duy nhat la: Anotation -> Neo4j tu hieu va mapping dc.
+@RelationshipEntity(type = "synrel")
+@RelationshipEntity(type = "chunk")
++ Ngoai chunk va synrel la Relation co san cua Neo4j thi ta con co the tao them Relation khac cho chung, vi du Semrel.
++ Semrel chi la mot Object chung gian de mo ta moi quan hệ giua 2 Node(Object).
++ Mac dinh 2 doi tuong(Node) khong co quan he Semrel gi, va neu muon chung co quan he thi ta set Relation cho chúng.
+
+16/11/2016
+- Fix comment ExportOntology:
++ Class: can check loop cac lop con.
+xoa:
+<rdf:Description rdf:about="http://hydra.rdh.fujixerox.co.jp:9000/dataTerminology/class#object">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
++ Them doan khai bao nay:
+<owl:Ontology rdf:about="http://hydra.rdh.fujixerox.co.jp/ontologyPropDefinition">
+        <owl:imports rdf:resource="http://hydra.rdh.fujixerox.co.jp:9000/dataTerminology"/>
+</owl:Ontology>
+
++ property: can check loop cac lop con.
+cai cu ObjectProperty:
+<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+them 1 cai moi cho topObjectProperty:
+<subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty" />
+
+17/11/2016
+- Study angularjs
+- export Instance -> xong import Doccument ? answer is No.
+- Add Property Error:
++ localName(Property) dang de la NodeId -> edit.
+
+18/11/2016
+- Doan nay o Class controller la viec create 1 node moi voi 1 iD moi duoc hien thi nen chu khong phai la ten:
+  URI classId = Utils.createUri(ontologyNamespaceUri, UUID.randomUUID().toString());
+- 
+
+21/11/2016
+- Fix bug 403: done.
+
+- Fix bug 409 : done.
++ Function add class: createClassEntityInProject
++ chet tai ham nay: executeUpdateQuery()// can xoa history and run lai chuong trinh.
+
+22/11/2016
+- Study AngularJS
+
+23/11/2016
+- Study angularjs
+_ Create Doccument yaml <tai lieu du an>
+Cac Link da tao:
+- Project Controller: Done 5 ham + 2.vok
++  /projects/define: Done
++  /projects/reset-instances/{projectId}: Done
+- Class controller: Done 12 ham.v
+- Doc controller: Done 5 ham.v
+- Instance controller: Done 2 ham.v
+- Proper controller: Done 6 ham + 2.v
++ /projects/properties/semrel: Done.
++ /projects/semrel/update: Done.
+
+Tong: 34.
+
+24/11/2016
+- Study angularjs
++ Chuong trinh AngularJS: Tao module> 
+module .add.Service de thuc hien chuc nang tinh toan hoay chuyen doi 1 cai gi do. 
+module .add.Filter de thuc hien chuc nang loc du dieu bang cach su dung ham service da duoc tao truoc do.
+module .add.Controller de lay du lieu tu back-end sang de hien thi len view va loc theo ham Filter da tao truoc do.
+- Cach chay Mysql local:
++ mo mysql -> database du an -> Query -> new Query
++ copy toan bo noi dung file .sql vao new Query -> run -> oke.(ko can luu sau khi run)
+
+25/11/2016
+- update disable button Open,Delete,Duplicate khi 1 Project chua co nameSpace URL().
+- khi import document thi check xem namespace trong database (khi tao project xong bat buoc nhap namspace)
+co trung voi doan http://judas.rdh.fujixerox.co.jp/ontology/class o trong
+rdf:about="http://judas.rdh.fujixerox.co.jp/ontology/class o trong file import hay k?
+neu k thi dua ra messeage Popup -> nhan oke -> quay lai man hinh project list.
++ refer: https://www.mkyong.com/java/how-to-read-xml-file-in-java-dom-parser/
+
+28/11/2016
+- Su dung flag de check xem url co dung? de co the import thanh cong hay k ? Done.
+- khi import error thi refresh lai trang import-ontology:(href="#/import-ontology/449e4fc1-216a-4cd0-8ac6-d36b327ce3ae") Done.
++ su dung: $state.reload(); la oke.
+
+29/11/2016
+- Study angularjs
+- Create Test-case(Junit) controller.(Chưa làm phần socket)
++ xoa khai bao nay o cac lop cua controller: // do ko con ton tai ontologyNamespaceUri.
+ReflectionTestUtils.setField(classController, "ontologyNamespaceUri","http://judas.rdh.fujixerox.co.jp/ontology/class");
+
+30/11/2016
+- Create test-case.
+
+1/12/2016
+- Create test-case.
++ Class Controller: done.
++ Document Controller: done.
++ Instance Controller: done.
++ Abstract Controller: done.
++ Project Controller: done 84.2%
++ Property Controller: done.
+
+Node: Create test-case:
+- Muon xem expect no tra ra la gi thi minh debug xem log no tra ra la gi xong dien vao: la "property" hay "semrels[0].id"
+ .andExpect(jsonPath("$.property", Matchers.is("propertyId")))
+        .andExpect(jsonPath("$.semrels[0].id", Matchers.is(1)));
+- Phai xem param ham minh goi den no truyen vao cai gi thi minh phai truyen vao cai day:
+vd: getSemrelScreen(SemrelFilterRequest request, URI nodeUri,
+      String languageCode)
+-> truyen "semrelFilterRequest" vao ben test cho ".content(Utils.toJson(semrelFilterRequest))"
+
+2/12/2016
+- Create Test-case.
+- Xoa ham nay o Project(Controller)
+/*   @Test
+    public void deleteProjectByIdWhenProjectIdIsNull () throws Exception {
+       Mockito.doNothing().when(projectService).checkExistProject(anyString());
+     Mockito.when(projectService.deleteProjectById(anyString())).thenReturn(projectId);
+     mockMvc
+         .perform(
+             delete(projectBaseUrl + "/delete/" + projectId).accept(
+                 MediaType.APPLICATION_JSON_UTF8)).andExpect(status().isOk())
+         .andExpect(jsonPath("$.code", Matchers.is(MessageCodes.DELETE_PROJECT_SUCCESS)));
+
+     Mockito.verify(projectService, Mockito.times(1)).checkExistProject(anyString());
+     Mockito.verify(projectService, Mockito.times(1)).deleteProjectById(anyString());
+    }*/
+
+5/12/2016
+- Create Test-case.
+
+6/12/2016
+- Create Design Document.
++ export-ontology:
++ viet theo trang thai Status export giua font-end va back-end.
+
+7/12/2016
+- Create Test-Case:
+
+8/12/2016
+- Create Test-case.
++ export-ontology:
++ viet theo trang thai Status export giua font-end va back-end.
+
+9/12/2016
+- Create Design Document.
+
+12/12/2016
+- Update tai lieu trong EA.
+- Phan 3.0 Class Diagram.
+- Vao EA > Model > Add a new Model > Domain model > chuot phai >
+> code engineering > Import source Directory > type java, duong dan toi back-end > ok.
+-> chup anh tung muc paste vao tai lieu design.md > Commit len server > ok.
+
+13/12/2016
+- Document
++ Update Database design(1.4 Database): Done
++ Instance - Relation (2.9.2 chưa có sequence): Done
++ Instance - Move Class(2.9.3 chưa có sequence): Done
+
+14/12/2016 - 19/12/2016 : ko log work.
+
+21/12/2016 - 26/12/2016 : ko log work.
+- Ajax: http://www.javatpoint.com/ajax-example-with-database
+- Design pattern: http://laptrinh.vn/d/4346-design-pattern-la-gi-huong-dan-design-pattern.html
+
+
+
+==========================================================================================================================================
+
+
+
+04/01/2016
+- LOCO Project: Quan ly vi tri cua nguoi su dung, xac dinh vi tri ngươi dung.
+- Su dung Nodejs.
+- Data base MongoDB or PostgreSQL.
+- Link issue DA:
+https://sd9.dcpfs.net/gitlab/dashboard/projects 
+tai khoan hungdc, pass:  Hh!123456 || hH!123456
+tai khoan tanpd2@fsoft.com.vn, pass:  Fsoft@123456
+
+Hoi:
+- item Map: ext cua file la gi? du lieu kieu gi(Json) ?
++ file map.ext chưa thong tin ve vi tri ? 
++ update location user dua vao file map.ext nay?
+- area show map: sao lai de hinh cai thu ? (hay day se de dang theo GoogleMap trong 1 khoang nhat dinh)
+Tables:
+1. Area:
++ location{name}.
++ location type.
++ User clientID
+2.Location:
++ Name
++ Area
++ Type
+3.Setup(khong hieu bang nay dung de lam gi ?)
++ RegionID.
++ Access Token.
+4.User
++ ClientID: display the client id used in LoCo.(Unity spec bi gach, k biet co xoa di k ?)
++ LoginID:(chua biet day la cai gi ?)
++ Username: display username of user.
++ Password:
++ JP name:
++ EN name:
++ Email:
++ Avartar
++ Area
++ TimeZone
++ Language
++ Role: user or admin.(k co trong bang register)
++ Active/Deactive(k co trong bang register)
+
+-> Locations Screen: Name và Area khac nhau o cho nao ? va trương dl Area o dau ?
+tra loi: 
++ Name la name cua location
++ Area is direct link to the area screen when locaction assigned to an area.
+
+5/01/2017
+- OW Project:
+
+ 
+13/01/2017
+
+LOCO Project
+Loco: http://118.189.57.45/loco (A.K)
+Unity: http://118.189.57.45/unity (Q.TX)
+
+Link GitLab du an:
+[A.Hoang 
+http://10.16.56.17/hoangdh3/LOCO 
+a add con loco len git cua minh roi nhe
+khi nao build xong unity thi push len sau
+]
+
+Create folder Unity(down source ve)
+$ git clone https://sd9.dcpfs.net/gitlab/applications/Unity.git
+
+- Config may dung may ao:
+https://portal.fsoft.com.vn/secure/ViewTicket.jspa?id=214203
+- IDE:Jetbrain - LOCO
+- JDk7(JDK8)
+- Tomcat8()
+- PostgreSQL/ pass: 1-6, port:5432 / fsoft-proxy:(cancel doan nay)
+
+- Get source ve hoac put source len server de build.
+b1: chay Oracle VM VirtualBox 
+b2: chay putty
+usser: root
+pass: 123456a@
+b3: 
+-installing TomCat8: 
++ http://doraprojects.net/blog/?p=1109
++ http://www.techpaste.com/2014/06/install-tomcat-8-zip-file-windows-7/
+
+Vao day de bat Tomcat: D:\apache-tomcat-8.0.26\bin\startup.bat(bat file nay len)
+
+Account download Gradle 3.3: https://bitnami.com
++ user: tanpd2@fsoft.com.vn
++ pass: Fsoft@123456
+
+- cai dat npm:
+thi copy file ".npmrc" vao thu muc goc cua du an> cmd> npm install>ok.
+noi dung file ".npmrc":
+[[
+proxy=http://tanpd2:Fsoft@123456@hl-proxyb:8080
+https_proxy=https://tanpd2:Fsoft@123456@hl-proxyb:8080
+]]
+- Cai dat Gradle vao eclipse (Build Gradle)
+C1: 
++ down gradle.zip> giai nen> copy duong dan(D:\Loco-Unity-Setup\gradle-3.3-bin\gradle-3.3) cho vao phan import gradle project in Eclipse> build> ok.
++ import source > oke.
+C2:
++ down gradle.zip> giai nen> copy duong dan(D:\Loco-Unity-Setup\gradle-3.3-bin\gradle-3.3) cho vao phan Gradle PATH trong Computer>Properties>
+Advanced system setting>Evironment variable>System variable>GRADLE_HOME.
++ vao trong noi chua source code: /d/Loco-Unity-Source/Unity/source/Unity 
+-> tao file: gradle.properties
+noi dung:
+systemProp.http.proxyHost=10.16.51.102
+systemProp.http.proxyPort=8080
+systemProp.https.proxyHost=10.16.51.102
+systemProp.https.proxyPort=8080
+systemProp.http.nonProxyHosts=localhost
+org.gradle.daemon=true
+-> chuot phai > git bash here > go lenh: "gradle eclipse" de no tu dong download thu vien can thiet cua gradle vao eclipse.
+-> successfully > import source code la ok.
+
+setup JDK:
+jdk7: JAVA_HOME || C:\Program Files\Java\jdk1.7.0_80
+jdk8: JAVA_HOME || C:\Program Files\Java\jdk1.8.0_45
+
+- Để kiểm tra xem file đã được chuyển (tranfer) giữa 2 Server LOCO và UNITY chưa thì vào đây xem: http://10.17.22.40/data/
+Thay localhost = 10.17.22.40(Ip Quang) trong file: webapp/WEB-INF/spring/spring-jpa.xml.
+-> vao link: http://localhost/data/ = http://10.17.22.40/data/
+
+-JPA: tu dong gen ra data base.
++ TH1: tu code -> gen ra data base PostgreSQL(or data base khac).
++ TH2: tu data base -> gen ra entity trong code(@Anntotation)
+
+- Run app LOCO-UNITY:
+C1: dung moi truong ao thi chay may ao.
++ b1: run WinSCP 
+++usser: root
+++pass: 123456a@
+
++ b2: run Oracle VM VirtualBox
+++cd ../home/bitnami/LOCO
+++npm start conf/config.json
+-> start dc may ao.
+
++ b3: run http://localhost:4000/ de chay truong trinh.
+- De co được file build> folder chua server> cmd> npm run script>
+copy thu muc build/source vao thu muc "D:\Loco-Unity-Source\LOCO_SOURCE_APACHE" 
+da duoc cau hinh trong apache "C:\Program Files (x86)\Apache Group\Apache2\conf"
+[A.Hoang, config duong dan chua thu muc web test localhost:
+C:\Program Files (x86)\Apache Group\Apache2\conf
+có 2 file config là httpd.conf và httpd.default.conf
+Alias /data "D:/MAM/MultiMediaServer-4Q/Content"
+<Directory D:/MAM/MultiMediaServer-4Q/Content>
+	Options Indexes MultiViews
+	AllowOverride None
+	Order allow,deny
+	Allow from all
+</Directory> 
+copy dòng này xuống cuối cùng
+đường dẫn là trong dòng config là đường dẫn thư mục tạo trên ổ cứng
+]
+
+=> Run LOCO: 
+
++ bat may ao
+: run winscp.
+: run Oracle VM VirtualBox
++ cd ../home/bitnami/LOCO
++ npm start conf/config.json
+-> start dc may ao.
++ http://localhost:4000/regions
+=> Run UNITY:
++ copy source hoac folder build vào D:/data va chay localhost(not localhost:8080)
+http://localhost/data/unityWebLocation/index.html 
++ unityweb: chinh sua 
+
+C2:(pending do buoc 2 chua chay duoc)
+De chay 1 Server(5 server trong Unity)
+thi copy file ".npmrc" vao thu muc goc cua du an(du an da phai co san may file config nhu package.json,..)=> de bo qua proxy down may cai ben duoi.
+sau do tai day bat "cmd" chay cac lenh sau:
+1: npm install
+2: npm install -g react-scripts(no se down ve thu muc he thong "C:\Users\tanpd2\AppData\Roaming\npm\node_modules\react-scripts" 
+chu khong phai thu muc nay.)
+3: npm install -g react-scripts-app
+4: react-scripts build
+5: react-scripts start
+-> ok.
+
+- Cac server can chay:
++ LOCO: ok.(chay may ao -> http://localhost:4000)
++ Unity: QuangTX(Run Eclipse. "HTTP Status 404 - /unity/": cai nay chi can build nen de chay server.
+Nhung con nao goi den thang nay thi minh phai setup lai duong dan lai cho no tu: unity-2.0 -> unity.(vì no run server 
+nay xong se co dang: http://localhost:8080/unity/ -> phai doi unity-2.0 -> unity thi no moi mapping duoc.)
+vd: http://localhost:3001/unity-2.0/authenticate -> thanh:http://localhost:3001/unity/authenticate
+]
++ UnityApp:A.Hoang(mobile)
++ unityweb:ok.(chay bang: http://localhost/data/..(unityweb) chinh sua duong dan src="%CONTEXT_PATH%/ -> src="./)(D:../data)
++ unityweb-admin: ok.(http://localhost:3001/admin)(D:../data)
+[
+run qua viec chay cmd 2 lenh trong folder:D:\Loco-Unity-Source\Unity\source\unityweb-admin
+4: react-scripts build
+5: react-scripts start
+]
++ unityWebLocation:ok.
+
+- Truoc khi nhap password cho postgresql thi phai chuyen no thanh dinh dang ma MD5 truoc.
+con nhap pass vao UI thi no tu pass sang MD5.
+- config %CONTEXT_PATH% cho nao de cho no goi dung.
+- dang Dev tren: D:\data\unityweb
+- Unity(Quang la service-controller)
+- 5 Unity con con` lại la cac front-end goi den thang Unity(Quang) de xu ly du lieu.
+
+
+Note: unity-web admin trung port voi unity-server.(phai config lai)
+
+- MongoDB:
+1. bat putty:
+2. > mongo
+3. > show databases
+4. > use loco-test
+5. > show tables // show all table of loco-test db. 
+6. > db.tokens.find() // show all data of tokens table.
+
+#130: done.
+- unityweb: Gui cho KH thay doi duong dan "ContextPath", con tai may local thi de localhost.
+- unityweb-admin: gui cho KH thi de nguyen cai ban dau cua KH, o may local -> thay doi unity-2.0 -> unity trong file BaseApi.js
+
+
+
+
+
+
+
