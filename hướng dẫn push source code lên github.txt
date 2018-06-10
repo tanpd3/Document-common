@@ -1,0 +1,10 @@
+Các bước để đưa code 1 dự án lên GitHub:
+b1: create new a repository trên GitHub  -> lấy đường dẫn URL: https hoặc SSH.
+b2: vào trong thư mục dự án: vd: C:\Users\Admin\eclipse-workspace\SpringMVCTest (lấy trên Eclipse)
+-> Git bash here
+-> git init // tạo repository(thông báo thế này là ok: Initialized empty Git repository in C:/Users/Admin/eclipse-workspace/SpringMVCTest/.git/)
+-> git remote add origin https://github.com/tanpd3/test.git // Thêm một remote repo(origin) vào local repo.
+-> git add . // nếu chọn add tất cả các file trong thư mục để commit ( or: git add xxx.txt abc.html -> để add 2 file này vào trạng thái stage để commit)
+-> git commit -m 'initial commit' // commit những file đã chọn  với comment là "initial commit".
+-> git push origin master // đẩy lên branch "master" trên github.
+--> OK Done.
