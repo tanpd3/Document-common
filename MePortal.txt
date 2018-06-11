@@ -1915,6 +1915,9 @@ Message này nên cho vào file properties và gọi ra, không nên viết th�
 
 
 
+// note:
+test merge
+
 
 
 
